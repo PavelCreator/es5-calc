@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES5 Calc</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="screen"/>
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+  <link href='https://fonts.googleapis.com/css?family=Coda|Roboto+Mono:500,400,300,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div class="parent">
+  <div class="calc-wrapper">
+    <div class="header">
+      <h2 class="title">ES5 Calc</h2>
+      <p class="author">by <a href="http://pavelcreator.com" target='_blank'>PavelCreator</a></p>
+    </div>
+    <table>
+      <tr>
+        <td colspan="5">
+          <div class="calculation-string" id="calculation-string"></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5">
+          <input type="text" name="field" id="field" class="form-control field"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="btn btn-default simple-button">MC</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button">MR</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button">MS</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button">M+</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button">M-</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="btn btn-default simple-button"><-</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button">CE</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="reset">C</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="plus-minus">+/-</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button">\/-</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="btn btn-default simple-button" id="n7">7</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="n8">8</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="n9">9</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="divide">/</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="percent">%</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="btn btn-default simple-button" id="n4">4</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="n5">5</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="n6">6</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="multiply">*</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button">1/x</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="btn btn-default simple-button" id="n1">1</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="n2">2</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="n3">3</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="minus">-</button>
+        </td>
+        <td rowspan="2">
+          <button class="btn btn-default simple-button rowspan2" id="equally">=</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button class="btn btn-default simple-button colspan2" id="n0">0</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="point">.</button>
+        </td>
+        <td>
+          <button class="btn btn-default simple-button" id="plus">+</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!--<script src="src/app.js-compiled.js"></script>-->
+<!--<script src="dist/bundle.js"></script>-->
+<script src="src/app.js"></script>
+
+</body>
+</html>

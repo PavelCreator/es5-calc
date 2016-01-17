@@ -1,0 +1,55 @@
+.calc-wrapper *{
+  outline:none !important;
+  font-family:'Coda', cursive;
+}
+.parent{
+  align-items:center;
+  display:flex;
+  height:100%;
+  justify-content:center;
+  left:0;
+  overflow:auto;
+  position:fixed;
+  top:-10%;
+  width:100%;
+}
+.header{
+  text-align:center;
+  color:#777;
+}
+.title{
+  font-size:37px;
+  margin-bottom:-3px;
+}
+.author{
+  font-size:19px;
+  margin-bottom:6px;
+}
+.field{
+  font-size:22px;
+  height:41px;
+  margin:3px;
+  padding:10px 8px 8px;
+  text-align:right;
+  width:324px;
+}
+.calculation-string{
+  text-align:right;
+  margin:0 5px;
+  min-height:20px;
+  font-size:14px;
+  color:#777;
+  font-family: 'Roboto Mono', sans-serif;
+  font-weight: 500;
+}
+.simple-button{
+  font-size:22px;
+  margin:3px;
+  width:60px;
+}
+.rowspan2{
+  height:97px;
+}
+.colspan2{
+  width:126px;
+}
