@@ -49,7 +49,10 @@ var saveOperator = function (operatorValue) {
 }
 
 var calculationAction = function (operator) {
+
   if (flagLastPress === "equally") {
+    secondVal = parseFloat(calculationString[calculationString.length - 2]);
+    logger();
     switch (operator) {
       case "plus":
         field += parseFloat(calculationString[calculationString.length - 2]);
@@ -93,10 +96,11 @@ var calculationAction = function (operator) {
         }
         break;
     }
-    renewField();
-    firstVal = field;
     secondVal = 0;
   }
+  renewField();
+  firstVal = field;
+  logger2();
 }
 
 var changeCalculationString = function (operator, lastNum) {
@@ -156,6 +160,41 @@ var changeCalculationString = function (operator, lastNum) {
   }
 }
 
+var makeOperatorWord = function(operatorSign){
+  switch (operatorSign) {
+    case "+":
+      return "plus";
+      break;
+
+    case "-":
+      return "minus";
+      break;
+
+    case "*":
+      return "multiply";
+      break;
+
+    case "/":
+      return "divide";
+      break;
+
+    case "=":
+      return "equally";
+      break;
+  }
+
+}
+var logger = function(){
+  console.log("----------------------------------------------");
+  console.log("firstVal = ");console.log(firstVal);
+  console.log("operator = ");console.log(operator);
+  console.log("secondVal = ");console.log(secondVal);
+}
+var logger2 = function(){
+  console.log("field = ");console.log(field);
+  console.log("calculationString = ");console.log(calculationString);
+}
+
 var operatorPress = function (operator) {
   switch (flagLastPress) {
     case "num":
@@ -163,7 +202,8 @@ var operatorPress = function (operator) {
       saveValues();
       changeCalculationString(operator, false);
       if (secondVal !== undefined) {
-        calculationAction(operator);
+        var operatorWord = makeOperatorWord(calculationString[calculationString.length - 3]);
+        calculationAction(operatorWord);
       }
       saveOperator(operator);
       break;
@@ -180,6 +220,7 @@ var operatorPress = function (operator) {
       saveValues();
       changeCalculationString(operator, true);
       saveOperator(operator);
+
       break;
   }
 }
@@ -187,10 +228,18 @@ var equallyPress = function () {
   if (operator !== undefined) {
     saveValues();
     if (secondVal !== undefined) {
+/*      if (flagLastPress === 'equally'){
+        secondVal = parseFloat(calculationString[calculationString.length - 4]);
+      }*/
+
       changeCalculationString("equally", false);
       calculationAction(operator);
+
+
+
       saveOperator(operator);
       flagLastPress = "equally";
+
     }
   }
 }
