@@ -76,6 +76,11 @@ var calculationAction = function (operator) {
       case "divide":
         field /= parseFloat(calculationString[calculationString.length - 2]);
         break;
+
+      case "percent":
+        console.log(calculationString[calculationString.length - 1]);
+        /*field = firstVal * secondVal*firstVal/100;*/
+        break;
     }
     renewField();
   } else {
@@ -102,12 +107,17 @@ var calculationAction = function (operator) {
           return false;
         }
         break;
+
+      case "percent":
+        console.log(calculationString[calculationString.length - 1]);
+        /*field = firstVal * secondVal*firstVal/100;*/
+        break;
     }
     secondVal = 0;
   }
   renewField();
   firstVal = field;
-  logger2();
+/*  logger2();*/
 }
 
 var changeCalculationString = function (operator, lastNum) {
@@ -188,6 +198,10 @@ var makeOperatorWord = function(operatorSign){
     case "=":
       return "equally";
       break;
+
+    case "%":
+      return "percent";
+      break;
   }
 
 }
@@ -235,18 +249,10 @@ var equallyPress = function () {
   if (operator !== undefined) {
     saveValues();
     if (secondVal !== undefined) {
-/*      if (flagLastPress === 'equally'){
-        secondVal = parseFloat(calculationString[calculationString.length - 4]);
-      }*/
-
       changeCalculationString("equally", false);
       calculationAction(operator);
-
-
-
       saveOperator(operator);
       flagLastPress = "equally";
-
     }
   }
 }
@@ -281,6 +287,93 @@ document.getElementById("reset").onclick = function () {
 }
 document.getElementById("plus-minus").onclick = function () {
   plusMinus();
+}
+document.getElementById("percent").onclick = function () {
+  operatorPress("percent");
+}
+
+window.captureEvents(Event.KEYPRESS);
+window.onkeypress = pressed;
+function pressed(e) {
+  switch (e.which)
+  {
+      case 48:
+          numPress(0);
+      break;
+
+      case 49:
+          numPress(1);
+      break;
+
+      case 50:
+          numPress(2);
+      break;
+
+      case 51:
+          numPress(3);
+      break;
+
+      case 52:
+          numPress(4);
+      break;
+
+      case 53:
+          numPress(5);
+      break;
+
+      case 54:
+          numPress(6);
+      break;
+
+      case 55:
+          numPress(7);
+      break;
+
+      case 56:
+          numPress(8);
+      break;
+
+      case 57:
+          numPress(9);
+      break;
+
+      case 44:
+          numPress(".");
+      break;
+
+      case 44:
+          numPress(".");
+      break;
+
+      case 43:
+          operatorPress("plus");
+      break;
+
+      case 45:
+          operatorPress("minus");
+      break;
+
+      case 42:
+          operatorPress("multiply");
+      break;
+
+      case 47:
+          operatorPress("divide");
+      break;
+
+      case 13:
+          equallyPress();
+      break;;
+
+      case 61:
+          equallyPress();
+      break;
+
+      case 0:
+          reset();
+      break;
+  }
+  /*alert(e.which);*/
 }
 
 
