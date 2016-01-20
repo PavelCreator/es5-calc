@@ -24,6 +24,7 @@
 .author{
   font-size:19px;
   margin-bottom:6px;
+  margin-top: 0;
 }
 .field{
   font-size:22px;
@@ -52,4 +53,13 @@
 }
 .colspan2{
   width:126px;
+}
+
+
+/*Bootstrap*/
+.form-control[disabled], fieldset[disabled] .form-control{
+  cursor: auto;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: inherit;
 }

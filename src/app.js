@@ -29,17 +29,24 @@ var numPress = function (num) {
     field = num;
     flagOperator = false;
   } else {
-    field = field * 10 + num;
+    if (field === 0){
+      field = num;
+      if (num === ".") {
+        field = "0.";
+      }
+    }else{
+      field = field.toString() + num;
+    }
   }
   renewField();
 }
 
 var saveValues = function () {
   if (firstVal === undefined) {
-    firstVal = field;
+    firstVal = parseFloat(field);
   }
   else {
-    secondVal = field;
+    secondVal = parseFloat(field);
   }
 }
 
@@ -306,4 +313,7 @@ document.getElementById("n8").onclick = function () {
 }
 document.getElementById("n9").onclick = function () {
   numPress(9);
+}
+document.getElementById("point").onclick = function () {
+  numPress(".");
 }
