@@ -50,6 +50,9 @@
 
 .rowspan2 {
   height: 97px; }
+  .rowspan2 span.valign-middle {
+    position: relative;
+    top: 23px; }
 
 .colspan2 {
   width: 126px; }

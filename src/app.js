@@ -342,7 +342,7 @@ function pressed(e) {
           numPress(".");
       break;
 
-      case 44:
+      case 46:
           numPress(".");
       break;
 
@@ -371,6 +371,22 @@ function pressed(e) {
       break;
 
       case 0:
+          reset();
+      break;
+
+      case 1089:
+          reset();
+      break;
+
+      case 1057:
+          reset();
+      break;
+
+      case 99:
+          reset();
+      break;
+
+      case 67:
           reset();
       break;
   }
