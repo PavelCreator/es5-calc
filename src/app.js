@@ -25,18 +25,19 @@ var numPress = function (num) {
     reset();
   }
   flagLastPress = 'num';
-  if (flagOperator) {
+  if ((flagOperator)||(field === 0)) {
     field = num;
     flagOperator = false;
-  } else {
-    if (field === 0){
-      field = num;
-      if (num === ".") {
-        field = "0.";
-      }
-    }else{
-      field = field.toString() + num;
+    if (num === ".") {
+      field = "0.";
     }
+  } else {
+    if (num === ".") {
+      if (field.indexOf(".") != -1){
+        return false;
+      }
+    }
+    field = field.toString() + num;
   }
   renewField();
 }
