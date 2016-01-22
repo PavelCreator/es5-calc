@@ -33,7 +33,7 @@ var numPress = function (num) {
     }
   } else {
     if (num === ".") {
-      if (field.indexOf(".") != -1){
+      if (field.toString().indexOf(".") != -1){
         return false;
       }
     }
