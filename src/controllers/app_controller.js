@@ -105,3 +105,7 @@ backspacePress = function () {
     renewField();
   }
 }
+clearErrorPress = function () {
+  field = 0;
+  renewField();
+}

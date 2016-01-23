@@ -17,6 +17,9 @@ document.getElementById("equally").onclick = function () {
 document.getElementById("reset").onclick = function () {
   reset();
 }
+document.getElementById("clear_error").onclick = function () {
+  clearErrorPress();
+}
 document.getElementById("plus-minus").onclick = function () {
   plusMinusPress();
 }

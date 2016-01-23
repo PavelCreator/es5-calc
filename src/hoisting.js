@@ -39,5 +39,6 @@ var
   percentPress,
   reciprocPress,
   squareRootPress,
-  backspacePress
+  backspacePress,
+  clearErrorPress
   ;
