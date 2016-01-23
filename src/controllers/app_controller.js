@@ -39,13 +39,18 @@ operatorPress = function (operator) {
       saveOperator(operator);
       break;
 
+    case "reciproc":
+      calculationString.splice(-1, 1);
+      changeCalculationString(operator, true);
+      saveOperator(operator);
+      break;
+
     case "equally":
       calculationString.splice(-1, 1);
       flagLastPress = 'operator';
       saveValues();
       changeCalculationString(operator, true);
       saveOperator(operator);
-
       break;
   }
 }
@@ -71,5 +76,19 @@ percentPress = function () {
   if ((operator !== undefined) && (flagLastPress == 'num')) {
     field = (firstVal * parseFloat(field) / 100).toString();
     renewField();
+  }
+}
+
+reciprocPress = function () {
+  if (flagLastPress !== 'operator') {
+    flagLastPress = 'reciproc';
+    calculationString = ['1', '/', parseFloat(field), '='];
+    field = 1/field;
+    renewField();
+    firstVal = parseFloat(field);
+    operator = undefined;
+    secondVal = undefined;
+    renewCalculationString();
+    field.toString();
   }
 }

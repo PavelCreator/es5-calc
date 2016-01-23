@@ -19,6 +19,7 @@ var
   saveOperator,
   makeOperatorWord,
   makeOperatorSign,
+  renewCalculationString,
   logger,
   logger2,
 
@@ -27,6 +28,7 @@ var
   reset,
   calculationAction,
   changeCalculationString,
+  reciprocCalculationString,
   percentAction,
 
   /*Handler Services*/
@@ -34,5 +36,6 @@ var
   operatorPress,
   equallyPress,
   plusMinusPress,
-  percentPress
+  percentPress,
+  reciprocPress
   ;

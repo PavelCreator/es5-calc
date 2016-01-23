@@ -23,6 +23,9 @@ document.getElementById("plus-minus").onclick = function () {
 document.getElementById("percent").onclick = function () {
   percentPress();
 }
+document.getElementById("reciproc").onclick = function () {
+  reciprocPress();
+}
 
 
 

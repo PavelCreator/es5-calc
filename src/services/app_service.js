@@ -30,11 +30,6 @@ calculationAction = function (operator) {
       case "divide":
         field /= parseFloat(calculationString[calculationString.length - 2]);
         break;
-
-      case "percent":
-        console.log(calculationString[calculationString.length - 1]);
-        /*field = firstVal * secondVal*firstVal/100;*/
-        break;
     }
     renewField();
   } else {
@@ -61,18 +56,15 @@ calculationAction = function (operator) {
           return false;
         }
         break;
-
-      case "percent":
-        console.log(calculationString[calculationString.length - 1]);
-        /*field = firstVal * secondVal*firstVal/100;*/
-        break;
     }
     secondVal = 0;
   }
   renewField();
   firstVal = field;
-  /*  logger2();*/
+  logger2();
 };
+
+
 
 changeCalculationString = function (operator, lastNum) {
   if (flagLastPress === "equally") {
@@ -80,15 +72,7 @@ changeCalculationString = function (operator, lastNum) {
     calculationString.push(calculationString[calculationString.length - 2]);
     calculationString.push(calculationString[calculationString.length - 2]);
     calculationString.push("=");
-    string = "";
-    for (var i = 0; i < calculationString.length; i++) {
-      string = string + " " + calculationString[i];
-    }
-    string = string.substr(1);
-    if (string.length > 34) {
-      string = "<< " + string.substr(-34, 34);
-    }
-    document.getElementById("calculation-string").innerHTML = string;
+    renewCalculationString();
   } else {
     if (!lastNum) {
       if (field >= 0) {
@@ -120,13 +104,6 @@ changeCalculationString = function (operator, lastNum) {
         break;
     }
     calculationString.push(sign);
-    for (var i = 0; i < calculationString.length; i++) {
-      string = string + " " + calculationString[i];
-    }
-    string = string.substr(1);
-    if (string.length > 34) {
-      string = "<< " + string.substr(-34, 34);
-    }
-    document.getElementById("calculation-string").innerHTML = string;
+    renewCalculationString();
   }
 };

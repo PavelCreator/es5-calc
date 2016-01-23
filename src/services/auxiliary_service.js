@@ -73,19 +73,28 @@ makeOperatorSign = function (operatorWord){
   }
 }
 
+renewCalculationString = function () {
+  var string = "";
+  for (var i = 0; i < calculationString.length; i++) {
+    string = string + " " + calculationString[i];
+  }
+  string = string.substr(1);
+  if (string.length > 34) {
+    string = "<< " + string.substr(-34, 34);
+  }
+  document.getElementById("calculation-string").innerHTML = string;
+}
+
 logger = function () {
   console.log("----------------------------------------------");
-  console.log("firstVal = ");
-  console.log(firstVal);
-  console.log("operator = ");
-  console.log(operator);
-  console.log("secondVal = ");
-  console.log(secondVal);
+  console.log("firstVal = ");  console.log(firstVal);
+  console.log("operator = ");  console.log(operator);
+  console.log("secondVal = ");  console.log(secondVal);
+  console.log("typeof(field) = ");console.log(typeof(field));
+  console.log("typeof(firstVal) = ");console.log(typeof(firstVal));
 }
 
 logger2 = function () {
-  console.log("field = ");
-  console.log(field);
-  console.log("calculationString = ");
-  console.log(calculationString);
+  console.log("field = ");  console.log(field);
+  console.log("calculationString = ");  console.log(calculationString);
 }

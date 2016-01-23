@@ -64,6 +64,15 @@
 .problem{
   background-color:#ddbdba;
 }
+.icon-font{
+  font-family:Verdana;
+  width:25px;
+}
+.arrow-left{
+  width:23px;
+  position:relative;
+  top:-2px;
+}
 
 /*Bootstrap*/
 .form-control[disabled], fieldset[disabled] .form-control{
