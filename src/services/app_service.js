@@ -7,7 +7,7 @@ reset = function () {
   flagOperator = false;
   renewField();
   resetCalculationString();
-}
+};
 
 calculationAction = function (operator) {
   logger();
@@ -72,7 +72,7 @@ calculationAction = function (operator) {
   renewField();
   firstVal = field;
   /*  logger2();*/
-}
+};
 
 changeCalculationString = function (operator, lastNum) {
   if (flagLastPress === "equally") {
@@ -129,4 +129,6 @@ changeCalculationString = function (operator, lastNum) {
     }
     document.getElementById("calculation-string").innerHTML = string;
   }
-}
+};
+
+percentAction = function(){};

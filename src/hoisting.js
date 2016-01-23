@@ -10,23 +10,27 @@ var
   flagOperator,
   flagLastPress,
 
-  /*Functions*/
+  /*FUNCTIONS*/
+
+  /*Auxiliary Services*/
   renewField,
   resetCalculationString,
-  reset,
-  numPress,
   saveValues,
   saveOperator,
-  calculationAction,
-  changeCalculationString,
   makeOperatorWord,
   logger,
   logger2,
 
+  /*App Services*/
+  reset,
+  calculationAction,
+  changeCalculationString,
+  percentAction,
+
+  /*Handler Services*/
+  numPress,
   operatorPress,
   equallyPress,
   plusMinusPress,
   percentPress
-
-
   ;

@@ -68,5 +68,7 @@ plusMinusPress = function () {
 }
 
 percentPress = function () {
-
+  logger();
+  firstVal
+  f
 }
