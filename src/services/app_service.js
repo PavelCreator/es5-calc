@@ -130,5 +130,3 @@ changeCalculationString = function (operator, lastNum) {
     document.getElementById("calculation-string").innerHTML = string;
   }
 };
-
-percentAction = function(){};

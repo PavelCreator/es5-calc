@@ -68,7 +68,8 @@ plusMinusPress = function () {
 }
 
 percentPress = function () {
-  logger();
-  firstVal
-  f
+  if ((operator !== undefined) && (flagLastPress == 'num')) {
+    field = (firstVal * parseFloat(field) / 100).toString();
+    renewField();
+  }
 }

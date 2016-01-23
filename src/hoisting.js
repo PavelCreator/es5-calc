@@ -18,8 +18,10 @@ var
   saveValues,
   saveOperator,
   makeOperatorWord,
+  makeOperatorSign,
   logger,
   logger2,
+
 
   /*App Services*/
   reset,

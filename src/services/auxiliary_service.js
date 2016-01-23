@@ -49,6 +49,30 @@ makeOperatorWord = function (operatorSign) {
 
 }
 
+makeOperatorSign = function (operatorWord){
+  switch (operator) {
+    case "plus":
+      return "+";
+      break;
+
+    case "minus":
+      return "-";
+      break;
+
+    case "multiply":
+      return "*";
+      break;
+
+    case "divide":
+      return "/";
+      break;
+
+    case "equally":
+      return "=";
+      break;
+  }
+}
+
 logger = function () {
   console.log("----------------------------------------------");
   console.log("firstVal = ");
