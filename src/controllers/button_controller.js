@@ -26,6 +26,12 @@ document.getElementById("percent").onclick = function () {
 document.getElementById("reciproc").onclick = function () {
   reciprocPress();
 }
+document.getElementById("square_root").onclick = function () {
+  squareRootPress();
+}
+document.getElementById("backspace").onclick = function () {
+  backspacePress();
+}
 
 
 

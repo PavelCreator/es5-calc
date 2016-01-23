@@ -39,7 +39,7 @@ operatorPress = function (operator) {
       saveOperator(operator);
       break;
 
-    case "reciproc":
+    case "specialOperator":
       calculationString.splice(-1, 1);
       changeCalculationString(operator, true);
       saveOperator(operator);
@@ -81,14 +81,17 @@ percentPress = function () {
 
 reciprocPress = function () {
   if (flagLastPress !== 'operator') {
-    flagLastPress = 'reciproc';
+    flagLastPress = 'specialOperator';
     calculationString = ['1', '/', parseFloat(field), '='];
     field = 1/field;
-    renewField();
-    firstVal = parseFloat(field);
-    operator = undefined;
-    secondVal = undefined;
-    renewCalculationString();
-    field.toString();
+    specialOperatorProcess();
+  }
+}
+squareRootPress = function () {
+  if (flagLastPress !== 'operator') {
+    flagLastPress = 'specialOperator';
+    calculationString = [parseFloat(field), '&#8730;', '='];
+    field = Math.sqrt(field);
+    specialOperatorProcess();
   }
 }

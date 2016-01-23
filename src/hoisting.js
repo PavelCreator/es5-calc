@@ -23,13 +23,13 @@ var
   logger,
   logger2,
 
-
   /*App Services*/
   reset,
   calculationAction,
   changeCalculationString,
   reciprocCalculationString,
   percentAction,
+  specialOperatorProcess,
 
   /*Handler Services*/
   numPress,
@@ -37,5 +37,7 @@ var
   equallyPress,
   plusMinusPress,
   percentPress,
-  reciprocPress
+  reciprocPress,
+  squareRootPress,
+  backspacePress
   ;

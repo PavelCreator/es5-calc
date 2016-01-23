@@ -10,7 +10,7 @@ reset = function () {
 };
 
 calculationAction = function (operator) {
-  logger();
+/*  logger();*/
   if (flagLastPress === "equally") {
     secondVal = parseFloat(calculationString[calculationString.length - 2]);
 
@@ -56,12 +56,16 @@ calculationAction = function (operator) {
           return false;
         }
         break;
+
+/*      case "square_root":
+        field = Math.sqrt(firstVal);
+        break;*/
     }
     secondVal = 0;
   }
   renewField();
   firstVal = field;
-  logger2();
+/*  logger2();*/
 };
 
 
@@ -102,8 +106,22 @@ changeCalculationString = function (operator, lastNum) {
       case "equally":
         sign = "=";
         break;
+
+      case "square_root":
+        sign = "&#8730;";
+        break;
     }
     calculationString.push(sign);
     renewCalculationString();
   }
 };
+
+specialOperatorProcess = function () {
+  renewField();
+  firstVal = parseFloat(field);
+  operator = undefined;
+  secondVal = undefined;
+  renewCalculationString();
+  field.toString();
+  flagLastPress = 'equally';
+}
