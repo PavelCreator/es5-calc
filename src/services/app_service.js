@@ -124,4 +124,5 @@ specialOperatorProcess = function () {
   renewCalculationString();
   field.toString();
   flagLastPress = 'equally';
+  flagOperator = true;
 }

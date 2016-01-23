@@ -95,3 +95,13 @@ squareRootPress = function () {
     specialOperatorProcess();
   }
 }
+backspacePress = function () {
+  if (!flagOperator) {
+    if ((field.toString().length <= 1)){
+      field = 0;
+    }else{
+      field = field.toString().slice(0, -1)
+    }
+    renewField();
+  }
+}
