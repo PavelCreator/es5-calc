@@ -55,10 +55,10 @@
           <div class="btn btn-default simple-button">CE</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="reset">C</div>
+          <div class="btn btn-default simple-button done" id="reset">C</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="plus-minus">+/-</div>
+          <div class="btn btn-default simple-button problem" id="plus-minus">+/-</div>
         </td>
         <td>
           <div class="btn btn-default simple-button">\/-</div>
@@ -66,16 +66,16 @@
       </tr>
       <tr>
         <td>
-          <div class="btn btn-default simple-button" id="n7">7</div>
+          <div class="btn btn-default simple-button done" id="n7">7</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="n8">8</div>
+          <div class="btn btn-default simple-button done" id="n8">8</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="n9">9</div>
+          <div class="btn btn-default simple-button done" id="n9">9</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="divide">/</div>
+          <div class="btn btn-default simple-button done" id="divide">/</div>
         </td>
         <td>
           <div class="btn btn-default simple-button" id="percent">%</div>
@@ -83,16 +83,16 @@
       </tr>
       <tr>
         <td>
-          <div class="btn btn-default simple-button" id="n4">4</div>
+          <div class="btn btn-default simple-button done" id="n4">4</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="n5">5</div>
+          <div class="btn btn-default simple-button done" id="n5">5</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="n6">6</div>
+          <div class="btn btn-default simple-button done" id="n6">6</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="multiply">*</div>
+          <div class="btn btn-default simple-button done" id="multiply">*</div>
         </td>
         <td>
           <div class="btn btn-default simple-button">1/x</div>
@@ -100,39 +100,43 @@
       </tr>
       <tr>
         <td>
-          <div class="btn btn-default simple-button" id="n1">1</div>
+          <div class="btn btn-default simple-button done" id="n1">1</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="n2">2</div>
+          <div class="btn btn-default simple-button done" id="n2">2</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="n3">3</div>
+          <div class="btn btn-default simple-button done" id="n3">3</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="minus">-</div>
+          <div class="btn btn-default simple-button done" id="minus">-</div>
         </td>
         <td rowspan="2">
-          <div class="btn btn-default simple-button rowspan2" id="equally"><span class="valign-middle">=</span></div>
+          <div class="btn btn-default simple-button rowspan2 done" id="equally"><span class="valign-middle">=</span></div>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <div class="btn btn-default simple-button colspan2" id="n0">0</div>
+          <div class="btn btn-default simple-button colspan2 done" id="n0">0</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="point">.</div>
+          <div class="btn btn-default simple-button done" id="point">.</div>
         </td>
         <td>
-          <div class="btn btn-default simple-button" id="plus">+</div>
+          <div class="btn btn-default simple-button done" id="plus">+</div>
         </td>
       </tr>
     </table>
   </div>
 </div>
 
-<!--<script src="src/app.js-compiled.js"></script>-->
-<!--<script src="dist/bundle.js"></script>-->
+<script src="src/hoisting.js"></script>
+<script src="src/services/auxiliary_services.js"></script>
+<script src="src/services/app_services.js"></script>
+<script src="src/services/handler_services.js"></script>
 <script src="src/app.js"></script>
+<script src="src/handlers/button_handlers.js"></script>
+<script src="src/handlers/keypress_handlers.js"></script>
 
 </body>
 </html>

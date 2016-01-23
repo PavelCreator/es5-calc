@@ -58,7 +58,12 @@
 .colspan2{
   width:126px;
 }
-
+.done{
+  background-color:#c2dddc;
+}
+.problem{
+  background-color:#ddbdba;
+}
 
 /*Bootstrap*/
 .form-control[disabled], fieldset[disabled] .form-control{
