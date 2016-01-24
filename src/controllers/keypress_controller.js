@@ -4,10 +4,6 @@ function pressed(e) {
   var ctrlDown = e.ctrlKey||e.metaKey // Mac support
   switch (e.which) {
     /*Operators*/
-    case 43://+
-      operatorPress("plus");
-      break;
-
     case 107://+
       operatorPress("plus");
       break;
@@ -17,23 +13,15 @@ function pressed(e) {
       break;
 
     case 109://-
-      if (ctrlDown) {
-        clipboard.cut();//Ctrl+C
-      } else {
-        operatorPress("minus");//-
-      }
+      operatorPress("minus");//-
       break;
 
-    case 42://*
-      operatorPress("multiply");
+    case 189://-
+      operatorPress("minus");//-
       break;
 
     case 106://*
       operatorPress("multiply");
-      break;
-
-    case 47://\/
-      operatorPress("divide");
       break;
 
     case 111://\/
@@ -45,35 +33,15 @@ function pressed(e) {
       equallyPress();
       break;
 
-    case 61://=
+    case 187://=
       equallyPress();
-      break;
-
-    case 0://ESC, Del
-      reset();
       break;
 
     case 27://ESC, Del
       reset();
       break;
 
-    case 96://`
-      reset();
-      break;
-
     case 192://`
-      reset();
-      break;
-
-    case 126://~
-      reset();
-      break;
-
-    case 1105://¸
-      reset();
-      break;
-
-    case 1025://¨
       reset();
       break;
 
@@ -93,22 +61,10 @@ function pressed(e) {
       }
       break;
 
-    case 1089:
-      clipboard.copy();//Ctrl+C
-      break;
-
-    case 120:
-      clipboard.cut();//Ctrl+X
-      break;
-
     case 88:
       if (ctrlDown) {
         clipboard.cut();//Ctrl+X
       }
-      break;
-
-    case 1095:
-      clipboard.cut();//Ctrl+X
       break;
 
     /*Numbers*/
@@ -212,5 +168,5 @@ function pressed(e) {
       numPress(".");
       break;
   }
-  console.log(e.which);
+  /*console.log(e.which);*/
 }
