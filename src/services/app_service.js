@@ -56,10 +56,6 @@ calculationAction = function (operator) {
           return false;
         }
         break;
-
-/*      case "square_root":
-        field = Math.sqrt(firstVal);
-        break;*/
     }
     secondVal = 0;
   }

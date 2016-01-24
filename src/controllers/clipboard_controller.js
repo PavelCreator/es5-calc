@@ -8,9 +8,6 @@ clipboard = {
     document.execCommand('copy');
     document.body.removeChild(textArea);
   },
-  paste: function () {
-    notification("Please insert in the field manually");
-  },
   copy: function () {
     this.toClipboard();
     notification("Copied to the clipboard");
@@ -49,6 +46,7 @@ clipboard = {
           }
           field = pastedText;
           renewField();
+          notification("Inserted from the clipboard");
         }
       }
       return false;
