@@ -1,6 +1,6 @@
 <h1>ES5 / JavaScript demo of skills</h1>
 <h3>Full-featured analogue of Windows calculator</h3>
-<h3>Full demo - <a href="http://pavelcreator.com/calc">Melomance.net</a></h3>
+<h3><a href="http://pavelcreator.com/calc">Demo</a></h3>
 <h3>This project:</h3>
 <ul>
   <li>... written in pure JavaScript without using jQuery</li>
