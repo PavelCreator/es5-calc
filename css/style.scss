@@ -73,6 +73,23 @@
   position:relative;
   top:-2px;
 }
+.field-wrapper{
+  position:relative;
+}
+.memory-sign{
+  position:absolute;
+  top:6px;
+  left:12px;
+  font-size:22px;
+  color:#337ab7;
+  background-color:#fff;
+  width:21px;
+  display:none;
+}
+.notifications{
+  color:#337ab7;
+  display:none;
+}
 
 /*Bootstrap*/
 .form-control[disabled], fieldset[disabled] .form-control{

@@ -1,4 +1,4 @@
-/*Handlers*/
+/*Operators*/
 document.getElementById("plus").onclick = function () {
   operatorPress("plus");
 }
@@ -11,6 +11,19 @@ document.getElementById("multiply").onclick = function () {
 document.getElementById("divide").onclick = function () {
   operatorPress("divide");
 }
+
+/*Special operators*/
+document.getElementById("percent").onclick = function () {
+  percentPress();
+}
+document.getElementById("reciproc").onclick = function () {
+  reciprocPress();
+}
+document.getElementById("square_root").onclick = function () {
+  squareRootPress();
+}
+
+/*Service buttons*/
 document.getElementById("equally").onclick = function () {
   equallyPress();
 }
@@ -23,21 +36,39 @@ document.getElementById("clear_error").onclick = function () {
 document.getElementById("plus-minus").onclick = function () {
   plusMinusPress();
 }
-document.getElementById("percent").onclick = function () {
-  percentPress();
-}
-document.getElementById("reciproc").onclick = function () {
-  reciprocPress();
-}
-document.getElementById("square_root").onclick = function () {
-  squareRootPress();
-}
 document.getElementById("backspace").onclick = function () {
   backspacePress();
 }
 
+/*Memory*/
+document.getElementById("mc").onclick = function () {
+  memory.clear();
+}
+document.getElementById("mr").onclick = function () {
+  memory.show();
+}
+document.getElementById("ms").onclick = function () {
+  memory.save();
+}
+document.getElementById("m_plus").onclick = function () {
+  memory.plus();
+}
+document.getElementById("m_minus").onclick = function () {
+  memory.minus();
+}
 
+/*Clipboard*/
+document.getElementById("copy").onclick = function () {
+  clipboard.copy();
+}
+document.getElementById("paste").onclick = function () {
+  clipboard.paste();
+}
+document.getElementById("cut").onclick = function () {
+  clipboard.cut();
+}
 
+/*Numbers*/
 document.getElementById("n0").onclick = function () {
   numPress(0);
 }

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen"/>
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
   <link href='https://fonts.googleapis.com/css?family=Coda|Roboto+Mono:500,400,300,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -19,32 +20,53 @@
       <tr>
         <td colspan="5">
           <div class="calculation-string" id="calculation-string"></div>
+          <div class="calculation-string notifications" id="notifications"></div>
         </td>
       </tr>
       <tr>
         <td colspan="5">
-          <input type="text" name="field"
-                 id="field"
-                 class="form-control field"
-                 disabled="disabled"
-                  />
+          <div class="field-wrapper">
+            <input type="text" name="field"
+                   id="field"
+                   class="form-control field"
+
+                />
+            <div class="memory-sign" id="memory-sign">M</div>
+          </div>
         </td>
       </tr>
       <tr>
         <td>
-          <div class="btn btn-default simple-button">MC</div>
+          <div class="btn btn-default simple-button" id="paste"><i class="fa fa-clipboard"></i></div>
         </td>
         <td>
-          <div class="btn btn-default simple-button">MR</div>
+          <div class="btn btn-default simple-button" id="copy"><i class="fa fa-files-o"></i></div>
         </td>
         <td>
-          <div class="btn btn-default simple-button">MS</div>
+          <div class="btn btn-default simple-button" id="cut"><i class="fa fa-scissors"></i></div>
         </td>
         <td>
-          <div class="btn btn-default simple-button">M+</div>
+          <div class="btn btn-default simple-button" id="keyboard"><i class="fa fa-keyboard-o"></i></div>
         </td>
         <td>
-          <div class="btn btn-default simple-button">M-</div>
+          <div class="btn btn-default simple-button done"><i class="fa fa-github"></i></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="btn btn-default simple-button" id="mc">MC</div>
+        </td>
+        <td>
+          <div class="btn btn-default simple-button" id="mr">MR</div>
+        </td>
+        <td>
+          <div class="btn btn-default simple-button" id="ms">MS</div>
+        </td>
+        <td>
+          <div class="btn btn-default simple-button" id="m_plus">M+</div>
+        </td>
+        <td>
+          <div class="btn btn-default simple-button" id="m_minus">M-</div>
         </td>
       </tr>
       <tr>
@@ -135,7 +157,10 @@
 <script src="src/hoisting.js"></script>
 <script src="src/services/auxiliary_service.js"></script>
 <script src="src/services/app_service.js"></script>
+<script src="src/services/notification_service.js"></script>
 <script src="src/controllers/app_controller.js"></script>
+<script src="src/controllers/memory_controller.js"></script>
+<script src="src/controllers/clipboard_controller.js"></script>
 <script src="src/controllers/button_controller.js"></script>
 <script src="src/controllers/keypress_controller.js"></script>
 <script src="src/start.js"></script>

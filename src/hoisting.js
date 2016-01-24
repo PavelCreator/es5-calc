@@ -40,5 +40,11 @@ var
   reciprocPress,
   squareRootPress,
   backspacePress,
-  clearErrorPress
+  clearErrorPress,
+
+  /*Memory*/
+  notification,
+  memory,
+  clipboard
+
   ;

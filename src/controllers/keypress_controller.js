@@ -1,9 +1,14 @@
 window.captureEvents(Event.KEYPRESS);
 window.onkeypress = pressed;
 function pressed(e) {
+  console.log("pressed = ");console.log(e.which);
   switch (e.which) {
     /*Keys*/
     case 48://0
+      numPress(0);
+      break;
+
+    case 96://0
       numPress(0);
       break;
 
@@ -11,7 +16,15 @@ function pressed(e) {
       numPress(1);
       break;
 
+    case 97://1
+      numPress(1);
+      break;
+
     case 50://2
+      numPress(2);
+      break;
+
+    case 98://2
       numPress(2);
       break;
 
@@ -19,7 +32,15 @@ function pressed(e) {
       numPress(3);
       break;
 
+    case 99://3
+      numPress(3);
+      break;
+
     case 52://4
+      numPress(4);
+      break;
+
+    case 100://4
       numPress(4);
       break;
 
@@ -27,7 +48,15 @@ function pressed(e) {
       numPress(5);
       break;
 
+    case 101://5
+      numPress(5);
+      break;
+
     case 54://6
+      numPress(6);
+      break;
+
+    case 102://6
       numPress(6);
       break;
 
@@ -35,11 +64,23 @@ function pressed(e) {
       numPress(7);
       break;
 
+    case 103://7
+      numPress(7);
+      break;
+
     case 56://8
       numPress(8);
       break;
 
+    case 104://8
+      numPress(8);
+      break;
+
     case 57://9
+      numPress(9);
+      break;
+
+    case 105://9
       numPress(9);
       break;
 
@@ -51,8 +92,16 @@ function pressed(e) {
       numPress(".");
       break;
 
+    case 110://.
+      numPress(".");
+      break;
+
     /*Operators*/
     case 43://+
+      operatorPress("plus");
+      break;
+
+    case 107://+
       operatorPress("plus");
       break;
 
@@ -60,11 +109,23 @@ function pressed(e) {
       operatorPress("minus");
       break;
 
+    case 109://-
+      operatorPress("minus");
+      break;
+
     case 42://*
       operatorPress("multiply");
       break;
 
+    case 106://*
+      operatorPress("multiply");
+      break;
+
     case 47://\/
+      operatorPress("divide");
+      break;
+
+    case 111://\/
       operatorPress("divide");
       break;
 
