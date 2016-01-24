@@ -10,7 +10,7 @@
   left:0;
   overflow:auto;
   position:fixed;
-  top:-10%;
+  top:-5%;
   width:100%;
 }
 .header{
@@ -107,6 +107,9 @@
   padding:0 20px;
   font-size:26px;
 }
+.info-description{
+  font-size:20px;
+}
 .tac{
   text-align:center;
 }
@@ -122,7 +125,7 @@
     background-color: inherit;
 }
 @media screen and (max-width:560px){
-  .keyboard-description{
+  .keyboard-description,.to-calc{
     font-size:18px;
   }
 }

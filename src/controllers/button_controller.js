@@ -75,6 +75,12 @@ document.getElementById("show-keyboard").onclick = function () {
 document.getElementsByClassName("show-calc").onclick = function () {
   info.showCalc();
 }
+var showCalc = document.getElementsByClassName("show-calc");
+for (var i = 0; i < showCalc.length; i++) {
+  showCalc[i].onclick = function () {
+    info.showCalc();
+  }
+}
 
 /*Numbers*/
 document.getElementById("n0").onclick = function () {

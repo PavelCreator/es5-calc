@@ -51,7 +51,7 @@ function pressed(e) {
 
     /*Memory*/
     case 77://MS
-      memory.plus();
+      memory.save();
       break;
 
     /*Clipboard*/

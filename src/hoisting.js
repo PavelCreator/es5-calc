@@ -23,6 +23,7 @@ var
   focusToField,
   logger,
   logger2,
+  browser,
 
   /*App Services*/
   reset,

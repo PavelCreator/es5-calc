@@ -102,3 +102,13 @@ logger2 = function () {
   console.log("field = ");  console.log(field);
   console.log("calculationString = ");  console.log(calculationString);
 }
+
+browser = function() {
+    var ua = navigator.userAgent;
+    if (ua.search(/Firefox/) != -1) return 'Firefox';
+    if (ua.search(/Opera/) != -1) return 'Opera';
+    if (ua.search(/Chrome/) != -1) return 'Google Chrome';
+    if (ua.search(/Safari/) != -1) return 'Safari';
+    if (ua.search(/Gecko/) != -1) return 'Internet Explorer';
+    return 'Search Bot';
+}
