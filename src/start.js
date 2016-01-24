@@ -2,5 +2,5 @@
 clipboard.pasteCatch();
 clipboard.cancelManualEntry();
 reset();
-
+focusToField();
 

@@ -89,11 +89,43 @@
   color: #337ab7;
   display: none; }
 
+#keyboard, #info {
+  display: none; }
+
+.to-calc {
+  text-align: center; }
+
+.keyboard-image {
+  max-width: 940px;
+  width: 100%;
+  padding: 0 20px; }
+
+.keyboard-description {
+  max-width: 940px;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 26px; }
+
+.tac {
+  text-align: center; }
+
+.keyboard-description-1 {
+  color: #337ab7; }
+
 /*Bootstrap*/
 .form-control[disabled], fieldset[disabled] .form-control {
   cursor: auto; }
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
   background-color: inherit; }
+
+@media screen and (max-width: 560px) {
+  .keyboard-description {
+    font-size: 18px; } }
+.form-control:focus {
+  border-color: #ccc;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
 
 /*# sourceMappingURL=style.css.map */

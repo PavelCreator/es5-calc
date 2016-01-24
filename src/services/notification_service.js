@@ -6,4 +6,5 @@ notification = function (text) {
     document.getElementById("calculation-string").style.display = "block";
     document.getElementById("notifications").style.display = "none";
   }, 2500);
+  focusToField();
 };

@@ -20,6 +20,7 @@ var
   makeOperatorWord,
   makeOperatorSign,
   renewCalculationString,
+  focusToField,
   logger,
   logger2,
 
@@ -31,6 +32,12 @@ var
   percentAction,
   specialOperatorProcess,
 
+  /*Entities*/
+  notification,
+  memory,
+  clipboard,
+  info,
+
   /*Handler Services*/
   numPress,
   operatorPress,
@@ -40,11 +47,6 @@ var
   reciprocPress,
   squareRootPress,
   backspacePress,
-  clearErrorPress,
-
-  /*Memory*/
-  notification,
-  memory,
-  clipboard
+  clearErrorPress
 
   ;

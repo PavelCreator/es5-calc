@@ -18,6 +18,7 @@ numPress = function (num) {
     field = field.toString() + num;
   }
   renewField();
+  focusToField();
 }
 
 operatorPress = function (operator) {
@@ -53,6 +54,7 @@ operatorPress = function (operator) {
       saveOperator(operator);
       break;
   }
+  focusToField();
 }
 
 equallyPress = function () {
@@ -65,11 +67,13 @@ equallyPress = function () {
       flagLastPress = "equally";
     }
   }
+  focusToField();
 }
 
 plusMinusPress = function () {
   field = field - field * 2;
   renewField();
+  focusToField();
 }
 
 percentPress = function () {
@@ -77,6 +81,7 @@ percentPress = function () {
     field = (firstVal * parseFloat(field) / 100).toString();
     renewField();
   }
+  focusToField();
 }
 
 reciprocPress = function () {
@@ -86,6 +91,7 @@ reciprocPress = function () {
     field = 1/field;
     specialOperatorProcess();
   }
+  focusToField();
 }
 squareRootPress = function () {
   if (flagLastPress !== 'operator') {
@@ -94,6 +100,7 @@ squareRootPress = function () {
     field = Math.sqrt(field);
     specialOperatorProcess();
   }
+  focusToField();
 }
 backspacePress = function () {
   if (!flagOperator) {
@@ -104,8 +111,10 @@ backspacePress = function () {
     }
     renewField();
   }
+  focusToField();
 }
 clearErrorPress = function () {
   field = 0;
   renewField();
+  focusToField();
 }

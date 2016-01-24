@@ -61,11 +61,19 @@ document.getElementById("m_minus").onclick = function () {
 document.getElementById("copy").onclick = function () {
   clipboard.copy();
 }
-document.getElementById("paste").onclick = function () {
-  clipboard.paste();
-}
 document.getElementById("cut").onclick = function () {
   clipboard.cut();
+}
+
+/*Additional Buttons*/
+document.getElementById("show-info").onclick = function () {
+  info.showInfo();
+}
+document.getElementById("show-keyboard").onclick = function () {
+  info.showKeyboard();
+}
+document.getElementsByClassName("show-calc").onclick = function () {
+  info.showCalc();
 }
 
 /*Numbers*/

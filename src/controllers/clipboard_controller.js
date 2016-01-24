@@ -30,7 +30,7 @@ clipboard = {
       }
 
       if (pastedText.match(/^[0-9\.,]+$/) == null) {
-        notification("Data form clipboard is not a number");
+        notification("Data from clipboard is not a number");
       }else{
         if (pastedText.indexOf(",") != -1) {
           pastedText = pastedText.replace(/,/g, ".")
@@ -42,7 +42,7 @@ clipboard = {
           }
         }
         if (dotCount > 1){
-          notification("Data form clipboard is not a number");
+          notification("Data from clipboard is not a number");
         }else{
           if (pastedText.charAt(0) == "."){
             pastedText = "0" + pastedText;
@@ -61,6 +61,9 @@ clipboard = {
       if (key == 8 || key == 46) {
         backspacePress();
         return false;
+      }
+      if (key == 116){
+        location.reload();
       }
       pressed(event);
     }

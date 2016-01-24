@@ -2,6 +2,10 @@ renewField = function () {
   document.getElementById("field").value = field;
 }
 
+focusToField = function () {
+  document.getElementById('field').focus();
+}
+
 resetCalculationString = function () {
   document.getElementById("calculation-string").innerHTML = "";
 }

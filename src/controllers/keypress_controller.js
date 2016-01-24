@@ -1,9 +1,117 @@
 window.captureEvents(Event.KEYPRESS);
 window.onkeypress = pressed;
 function pressed(e) {
-  console.log("pressed = ");console.log(e.which);
+  var ctrlDown = e.ctrlKey||e.metaKey // Mac support
   switch (e.which) {
-    /*Keys*/
+    /*Operators*/
+    case 43://+
+      operatorPress("plus");
+      break;
+
+    case 107://+
+      operatorPress("plus");
+      break;
+
+    case 45://-
+      operatorPress("minus");
+      break;
+
+    case 109://-
+      if (ctrlDown) {
+        clipboard.cut();//Ctrl+C
+      } else {
+        operatorPress("minus");//-
+      }
+      break;
+
+    case 42://*
+      operatorPress("multiply");
+      break;
+
+    case 106://*
+      operatorPress("multiply");
+      break;
+
+    case 47://\/
+      operatorPress("divide");
+      break;
+
+    case 111://\/
+      operatorPress("divide");
+      break;
+
+    /*Service buttons*/
+    case 13://Enter
+      equallyPress();
+      break;
+
+    case 61://=
+      equallyPress();
+      break;
+
+    case 0://ESC, Del
+      reset();
+      break;
+
+    case 27://ESC, Del
+      reset();
+      break;
+
+    case 96://`
+      reset();
+      break;
+
+    case 192://`
+      reset();
+      break;
+
+    case 126://~
+      reset();
+      break;
+
+    case 1105://¸
+      reset();
+      break;
+
+    case 1025://¨
+      reset();
+      break;
+
+    case 8://Backspace
+      backspacePress();
+      break;
+
+    /*Memory*/
+    case 77://MS
+      memory.plus();
+      break;
+
+    /*Clipboard*/
+    case 67:
+      if (ctrlDown) {
+        clipboard.copy();//Ctrl+C
+      }
+      break;
+
+    case 1089:
+      clipboard.copy();//Ctrl+C
+      break;
+
+    case 120:
+      clipboard.cut();//Ctrl+X
+      break;
+
+    case 88:
+      if (ctrlDown) {
+        clipboard.cut();//Ctrl+X
+      }
+      break;
+
+    case 1095:
+      clipboard.cut();//Ctrl+X
+      break;
+
+    /*Numbers*/
     case 48://0
       numPress(0);
       break;
@@ -88,83 +196,21 @@ function pressed(e) {
       numPress(".");
       break;
 
+    case 188://,
+      numPress(".");
+      break;
+
     case 46://.
+      numPress(".");
+      break;
+
+    case 190://.
       numPress(".");
       break;
 
     case 110://.
       numPress(".");
       break;
-
-    /*Operators*/
-    case 43://+
-      operatorPress("plus");
-      break;
-
-    case 107://+
-      operatorPress("plus");
-      break;
-
-    case 45://-
-      operatorPress("minus");
-      break;
-
-    case 109://-
-      operatorPress("minus");
-      break;
-
-    case 42://*
-      operatorPress("multiply");
-      break;
-
-    case 106://*
-      operatorPress("multiply");
-      break;
-
-    case 47://\/
-      operatorPress("divide");
-      break;
-
-    case 111://\/
-      operatorPress("divide");
-      break;
-
-    case 37://%
-      percentPress();
-
-    /*Special*/
-    case 13://Enter
-      equallyPress();
-      break;
-
-    case 61://=
-      equallyPress();
-      break;
-
-    case 0://ESC, Del
-      reset();
-      break;
-
-    case 96://`
-      reset();
-      break;
-
-    case 126://~
-      reset();
-      break;
-
-    case 1105://¸
-      reset();
-      break;
-
-    case 1125://¨
-      reset();
-      break;
-
-    case 8://Backspace
-      backspacePress();
-      break;
-
   }
-  /*alert(e.which);*/
+  console.log(e.which);
 }
