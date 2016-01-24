@@ -16,39 +16,39 @@ calculationAction = function (operator) {
 
     switch (operator) {
       case "plus":
-        field += parseFloat(calculationString[calculationString.length - 2]);
+        field = mathOperatrions.sum(field, parseFloat(calculationString[calculationString.length - 2]));
         break;
 
       case "minus":
-        field -= parseFloat(calculationString[calculationString.length - 2]);
+        field = mathOperatrions.subtraction(field, parseFloat(calculationString[calculationString.length - 2]));
         break;
 
       case "multiply":
-        field *= parseFloat(calculationString[calculationString.length - 2]);
+        field = mathOperatrions.multiplication(field, parseFloat(calculationString[calculationString.length - 2]));
         break;
 
       case "divide":
-        field /= parseFloat(calculationString[calculationString.length - 2]);
+        field = mathOperatrions.division(field, parseFloat(calculationString[calculationString.length - 2]));
         break;
     }
     renewField();
   } else {
     switch (operator) {
       case "plus":
-        field = firstVal + secondVal;
+        field = mathOperatrions.sum(firstVal, secondVal);
         break;
 
       case "minus":
-        field = firstVal - secondVal;
+        field = mathOperatrions.subtraction(firstVal, secondVal);
         break;
 
       case "multiply":
-        field = firstVal * secondVal;
+        field = mathOperatrions.multiplication(firstVal, secondVal);
         break;
 
       case "divide":
         if (secondVal !== 0) {
-          field = firstVal / secondVal;
+          field = mathOperatrions.division(firstVal, secondVal);
         } else {
           reset();
           field = "Error. Division by zero";

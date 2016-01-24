@@ -67,6 +67,15 @@ function pressed(e) {
       }
       break;
 
+    /*Additional Buttons*/
+    case 75:
+      info.showKeyboard();
+      break;
+
+    case 73:
+      info.showInfo();
+      break;
+
     /*Numbers*/
     case 48://0
       numPress(0);

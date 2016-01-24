@@ -24,6 +24,7 @@ var
   logger,
   logger2,
   browser,
+  mathOperatrions,
 
   /*App Services*/
   reset,
