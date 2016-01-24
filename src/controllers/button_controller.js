@@ -67,18 +67,18 @@ document.getElementById("cut").onclick = function () {
 
 /*Additional Buttons*/
 document.getElementById("show-info").onclick = function () {
-  info.showInfo();
+  view.showInfo();
 }
 document.getElementById("show-keyboard").onclick = function () {
-  info.showKeyboard();
+  view.showKeyboard();
 }
 document.getElementsByClassName("show-calc").onclick = function () {
-  info.showCalc();
+  view.showCalc();
 }
 var showCalc = document.getElementsByClassName("show-calc");
 for (var i = 0; i < showCalc.length; i++) {
   showCalc[i].onclick = function () {
-    info.showCalc();
+    view.showCalc();
   }
 }
 

@@ -17,7 +17,7 @@ numPress = function (num) {
     }
     field = field.toString() + num;
   }
-  renewField();
+  fieldSvc.renew();
 }
 
 operatorPress = function (operator) {
@@ -68,13 +68,13 @@ equallyPress = function () {
 
 plusMinusPress = function () {
   field = field - field * 2;
-  renewField();
+  fieldSvc.renew();
 }
 
 percentPress = function () {
   if ((operator !== undefined) && (flagLastPress == 'num')) {
     field = (firstVal * parseFloat(field) / 100).toString();
-    renewField();
+    fieldSvc.renew();
   }
 }
 
@@ -93,7 +93,6 @@ squareRootPress = function () {
     field = Math.sqrt(field);
     specialOperatorProcess();
   }
-  
 }
 backspacePress = function () {
   if (!flagOperator) {
@@ -102,10 +101,10 @@ backspacePress = function () {
     }else{
       field = field.toString().slice(0, -1)
     }
-    renewField();
+    fieldSvc.renew();
   }
 }
 clearErrorPress = function () {
   field = 0;
-  renewField();
+  fieldSvc.renew();
 }

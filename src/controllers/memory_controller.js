@@ -12,7 +12,7 @@ memory = {
   },
   show: function () {
     field = this.value;
-    renewField();
+    fieldSvc.renew();
     flagLastPress = 'equally';
   },
   save: function () {

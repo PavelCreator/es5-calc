@@ -13,16 +13,14 @@ var
   /*FUNCTIONS*/
 
   /*Auxiliary Services*/
-  renewField,
-  resetCalculationString,
+  fieldSvc,
+  calculationStringSvc,
+  mathSvc,
   save,
   make,
-  renewCalculationString,
-  focusToField,
   logger,
   logger2,
   browser,
-  mathOperatrions,
 
   /*App Services*/
   reset,
@@ -31,12 +29,15 @@ var
   reciprocCalculationString,
   percentAction,
   specialOperatorProcess,
+  clipboardService,
 
   /*Entities*/
   notification,
   memory,
   clipboard,
-  info,
+
+  /*View Layout*/
+  view,
 
   /*Handler Services*/
   numPress,

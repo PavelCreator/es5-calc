@@ -2,7 +2,7 @@
 clipboard.pasteCatch();
 clipboard.cancelManualEntry();
 reset();
-focusToField();
+fieldSvc.focus();
 
 //only in chrome
 /*if (browser() == "Google Chrome"){
@@ -12,11 +12,11 @@ focusToField();
   }
   document.getElementsByTagName('body')[0].onclick = function () {
 /!*    document.getElementById('field').style.padding = "10px 8px 8px";*!/
-    focusToField();
+    fieldSvc.focus();
   }
 }else{*/
   document.getElementsByTagName('body')[0].onclick = function () {
-    focusToField();
+    fieldSvc.focus();
   }
 /*}*/
 

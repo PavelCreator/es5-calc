@@ -1,15 +1,3 @@
-renewField = function () {
-  document.getElementById("field").value = field;
-}
-
-focusToField = function () {
-  document.getElementById('field').focus();
-}
-
-resetCalculationString = function () {
-  document.getElementById("calculation-string").innerHTML = "";
-}
-
 save = {
   values: function () {
     if (firstVal === undefined) {
@@ -80,18 +68,6 @@ make = {
         break;
     }
   }
-}
-
-renewCalculationString = function () {
-  var string = "";
-  for (var i = 0; i < calculationString.length; i++) {
-    string = string + " " + calculationString[i];
-  }
-  string = string.substr(1);
-  if (string.length > 34) {
-    string = "<< " + string.substr(-34, 34);
-  }
-  document.getElementById("calculation-string").innerHTML = string;
 }
 
 logger = function () {

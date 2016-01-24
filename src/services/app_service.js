@@ -5,8 +5,8 @@ reset = function () {
   operator = undefined;
   calculationString = [];
   flagOperator = false;
-  renewField();
-  resetCalculationString();
+  fieldSvc.renew();
+  calculationStringSvc.reset();
 };
 
 calculationAction = function (operator) {
@@ -16,63 +16,57 @@ calculationAction = function (operator) {
 
     switch (operator) {
       case "plus":
-        field = mathOperatrions.sum(field, parseFloat(calculationString[calculationString.length - 2]));
+        field = mathSvc.sum(field, parseFloat(calculationString[calculationString.length - 2]));
         break;
 
       case "minus":
-        field = mathOperatrions.subtraction(field, parseFloat(calculationString[calculationString.length - 2]));
+        field = mathSvc.subtraction(field, parseFloat(calculationString[calculationString.length - 2]));
         break;
 
       case "multiply":
-        field = mathOperatrions.multiplication(field, parseFloat(calculationString[calculationString.length - 2]));
+        field = mathSvc.multiplication(field, parseFloat(calculationString[calculationString.length - 2]));
         break;
 
       case "divide":
-        field = mathOperatrions.division(field, parseFloat(calculationString[calculationString.length - 2]));
+        field = mathSvc.division(field, parseFloat(calculationString[calculationString.length - 2]));
         break;
     }
-    renewField();
+    fieldSvc.renew();
   } else {
     switch (operator) {
       case "plus":
-        field = mathOperatrions.sum(firstVal, secondVal);
+        field = mathSvc.sum(firstVal, secondVal);
         break;
 
       case "minus":
-        field = mathOperatrions.subtraction(firstVal, secondVal);
+        field = mathSvc.subtraction(firstVal, secondVal);
         break;
 
       case "multiply":
-        field = mathOperatrions.multiplication(firstVal, secondVal);
+        field = mathSvc.multiplication(firstVal, secondVal);
         break;
 
       case "divide":
         if (secondVal !== 0) {
-          field = mathOperatrions.division(firstVal, secondVal);
+          field = mathSvc.division(firstVal, secondVal);
         } else {
           reset();
           field = "Error. Division by zero";
-          renewField();
+          fieldSvc.renew();
           return false;
         }
         break;
     }
     secondVal = 0;
   }
-  renewField();
+  fieldSvc.renew();
   firstVal = field;
 /*  logger2();*/
 };
 
-
-
 changeCalculationString = function (operator, lastNum) {
   if (flagLastPress === "equally") {
-    calculationString.splice(-1, 1);
-    calculationString.push(calculationString[calculationString.length - 2]);
-    calculationString.push(calculationString[calculationString.length - 2]);
-    calculationString.push("=");
-    renewCalculationString();
+    calculationStringSvc.changeLastEqually();
   } else {
     if (!lastNum) {
       if (field >= 0) {
@@ -81,19 +75,17 @@ changeCalculationString = function (operator, lastNum) {
         calculationString.push("(" + field.toString() + ")");
       }
     }
-    var sign, string = '';
-    sign = make.operatorSign(operator);
-    calculationString.push(sign);
-    renewCalculationString();
+    calculationString.push(make.operatorSign(operator));
+    calculationStringSvc.renew();
   }
 };
 
 specialOperatorProcess = function () {
-  renewField();
+  fieldSvc.renew();
   firstVal = parseFloat(field);
   operator = undefined;
   secondVal = undefined;
-  renewCalculationString();
+  calculationStringSvc.renew();
   field.toString();
   flagLastPress = 'equally';
   flagOperator = true;

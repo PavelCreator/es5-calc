@@ -69,11 +69,11 @@ function pressed(e) {
 
     /*Additional Buttons*/
     case 75:
-      info.showKeyboard();
+      view.showKeyboard();
       break;
 
     case 73:
-      info.showInfo();
+      view.showInfo();
       break;
 
     /*Numbers*/
