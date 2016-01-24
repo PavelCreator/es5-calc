@@ -10,70 +10,75 @@ resetCalculationString = function () {
   document.getElementById("calculation-string").innerHTML = "";
 }
 
-saveValues = function () {
-  if (firstVal === undefined) {
-    firstVal = parseFloat(field);
-  }
-  else {
-    secondVal = parseFloat(field);
+save = {
+  values: function () {
+    if (firstVal === undefined) {
+      firstVal = parseFloat(field);
+    }
+    else {
+      secondVal = parseFloat(field);
+    }
+  },
+  operator: function (operatorValue) {
+    operator = operatorValue;
+    flagOperator = true;
   }
 }
 
-saveOperator = function (operatorValue) {
-  operator = operatorValue;
-  flagOperator = true;
-}
+make = {
+  operatorWord: function (operatorSign) {
+    switch (operatorSign) {
+      case "+":
+        return "plus";
+        break;
 
-makeOperatorWord = function (operatorSign) {
-  switch (operatorSign) {
-    case "+":
-      return "plus";
-      break;
+      case "-":
+        return "minus";
+        break;
 
-    case "-":
-      return "minus";
-      break;
+      case "*":
+        return "multiply";
+        break;
 
-    case "*":
-      return "multiply";
-      break;
+      case "/":
+        return "divide";
+        break;
 
-    case "/":
-      return "divide";
-      break;
+      case "=":
+        return "equally";
+        break;
 
-    case "=":
-      return "equally";
-      break;
+      case "%":
+        return "percent";
+        break;
+    }
+  },
+  operatorSign: function (operatorWord) {
+    switch (operatorWord) {
+      case "plus":
+        return "+";
+        break;
 
-    case "%":
-      return "percent";
-      break;
-  }
+      case "minus":
+        return "-";
+        break;
 
-}
+      case "multiply":
+        return "*";
+        break;
 
-makeOperatorSign = function (operatorWord){
-  switch (operator) {
-    case "plus":
-      return "+";
-      break;
+      case "divide":
+        return "/";
+        break;
 
-    case "minus":
-      return "-";
-      break;
+      case "equally":
+        return "=";
+        break;
 
-    case "multiply":
-      return "*";
-      break;
-
-    case "divide":
-      return "/";
-      break;
-
-    case "equally":
-      return "=";
-      break;
+      case "square_root":
+        return "&#8730;";
+        break;
+    }
   }
 }
 

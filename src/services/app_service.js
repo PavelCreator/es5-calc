@@ -82,31 +82,7 @@ changeCalculationString = function (operator, lastNum) {
       }
     }
     var sign, string = '';
-    switch (operator) {
-      case "plus":
-        sign = "+";
-        break;
-
-      case "minus":
-        sign = "-";
-        break;
-
-      case "multiply":
-        sign = "*";
-        break;
-
-      case "divide":
-        sign = "/";
-        break;
-
-      case "equally":
-        sign = "=";
-        break;
-
-      case "square_root":
-        sign = "&#8730;";
-        break;
-    }
+    sign = make.operatorSign(operator);
     calculationString.push(sign);
     renewCalculationString();
   }

@@ -24,44 +24,43 @@ operatorPress = function (operator) {
   switch (flagLastPress) {
     case "num":
       flagLastPress = 'operator';
-      saveValues();
+      save.values();
       changeCalculationString(operator, false);
       if (secondVal !== undefined) {
-        var operatorWord = makeOperatorWord(calculationString[calculationString.length - 3]);
-        calculationAction(operatorWord);
+        calculationAction(make.operatorWord(calculationString[calculationString.length - 3]));
       }
-      saveOperator(operator);
+      save.operator(operator);
       break;
 
     case "operator":
       calculationString.splice(-1, 1);
       changeCalculationString(operator, true);
-      saveOperator(operator);
+      save.operator(operator);
       break;
 
     case "specialOperator":
       calculationString.splice(-1, 1);
       changeCalculationString(operator, true);
-      saveOperator(operator);
+      save.operator(operator);
       break;
 
     case "equally":
       calculationString.splice(-1, 1);
       flagLastPress = 'operator';
-      saveValues();
+      save.values();
       changeCalculationString(operator, true);
-      saveOperator(operator);
+      save.operator(operator);
       break;
   }
 }
 
 equallyPress = function () {
   if (operator !== undefined) {
-    saveValues();
+    save.values();
     if (secondVal !== undefined) {
       changeCalculationString("equally", false);
       calculationAction(operator);
-      saveOperator(operator);
+      save.operator(operator);
       flagLastPress = "equally";
     }
   }

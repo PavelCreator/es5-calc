@@ -15,10 +15,8 @@ var
   /*Auxiliary Services*/
   renewField,
   resetCalculationString,
-  saveValues,
-  saveOperator,
-  makeOperatorWord,
-  makeOperatorSign,
+  save,
+  make,
   renewCalculationString,
   focusToField,
   logger,
