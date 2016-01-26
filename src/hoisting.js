@@ -40,6 +40,7 @@ var
   view,
   notification,
   notificationTimeout,
+  warningClassTimeout,
 
   /*Handler Services*/
   numPress,
