@@ -1,4 +1,5 @@
 notification = {
+  delay: 2500,
   show: function (text) {
     clearTimeout(notificationTimeout);
     document.getElementById("notifications").innerHTML = text;
@@ -7,10 +8,22 @@ notification = {
     this.timeout();
     fieldSvc.focus();
   },
+  info: function (text) {
+    classFnc.remove(document.getElementById("notifications"), "warning");
+    this.show(text);
+  },
+  warning: function (text) {
+    classFnc.add(document.getElementById("notifications"), "warning");
+    this.show(text);
+    setTimeout(function () {
+        classFnc.remove(document.getElementById("notifications"), "warning");
+    }, this.delay);
+  },
   timeout: function(){
     notificationTimeout = setTimeout(function () {
       document.getElementById("calculation-string").style.display = "block";
       document.getElementById("notifications").style.display = "none";
-    }, 2500)
+
+    }, this.delay)
   }
 }

@@ -10,12 +10,12 @@ clipboard = {
   },
   copy: function () {
     this.toClipboard();
-    notification.show("Copied to the clipboard");
+    notification.info("Copied to the clipboard");
   },
   cut: function () {
     this.toClipboard();
     reset();
-    notification.show("Cut to the clipboard");
+    notification.info("Cut to the clipboard");
   },
   pasteCatch: function () {
     document.getElementById('field').onpaste = function (e) {
@@ -28,7 +28,7 @@ clipboard = {
       if(clipboardService.pastedTextValidation(pastedText)){
         field = pastedText;
         fieldSvc.renew();
-        notification.show("Inserted from the clipboard");
+        notification.info("Inserted from the clipboard");
       };
       return false;
     };

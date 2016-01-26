@@ -21,6 +21,7 @@ var
   logger,
   logger2,
   browser,
+  classFnc,
 
   /*App Services*/
   reset,
