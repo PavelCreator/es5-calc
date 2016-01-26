@@ -32,12 +32,13 @@ var
   clipboardService,
 
   /*Entities*/
-  notification,
   memory,
   clipboard,
 
   /*View Layout*/
   view,
+  notification,
+  notificationTimeout,
 
   /*Handler Services*/
   numPress,

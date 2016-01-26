@@ -58,6 +58,8 @@ function pressed(e) {
     case 67:
       if (ctrlDown) {
         clipboard.copy();//Ctrl+C
+      }else{
+        reset();
       }
       break;
 
