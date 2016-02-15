@@ -1,3 +1,4 @@
+"use strict";
 view = {
   showInfo: function(){
     document.getElementById("calc").style.display = "none";

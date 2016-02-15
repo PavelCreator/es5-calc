@@ -1,3 +1,4 @@
+"use strict";
 clipboardService = {
   pastedTextValidation: function (pastedText) {
     if (pastedText.match(/^[0-9\.,]+$/) == null) {

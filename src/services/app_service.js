@@ -1,3 +1,4 @@
+"use strict";
 reset = function () {
   field = 0;
   firstVal = undefined;
@@ -63,7 +64,6 @@ calculationAction = function (operator) {
   firstVal = field;
 /*  logger2();*/
 };
-
 changeCalculationString = function (operator, lastNum) {
   if (flagLastPress === "equally") {
     calculationStringSvc.changeLastEqually();

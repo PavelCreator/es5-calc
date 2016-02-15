@@ -1,3 +1,4 @@
+"use strict";
 window.captureEvents(Event.KEYPRESS);
 window.onkeypress = pressed;
 function pressed(e) {

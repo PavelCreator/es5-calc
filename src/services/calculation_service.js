@@ -1,3 +1,4 @@
+"use strict";
 calculationStringSvc = {
   reset: function(){
     document.getElementById("calculation-string").innerHTML = "";

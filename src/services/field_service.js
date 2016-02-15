@@ -1,3 +1,4 @@
+"use strict";
 fieldSvc = {
   renew: function(){
     document.getElementById("field").value = field;

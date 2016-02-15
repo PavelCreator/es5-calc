@@ -1,3 +1,4 @@
+"use strict";
 memory = {
   value: 0,
   showMemorySign: function () {

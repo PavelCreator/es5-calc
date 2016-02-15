@@ -1,3 +1,4 @@
+"use strict";
 mathSvc = {
   fix: 1000000,
   sum: function(a1,a2) {

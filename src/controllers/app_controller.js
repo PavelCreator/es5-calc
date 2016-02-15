@@ -1,3 +1,4 @@
+"use strict";
 numPress = function (num) {
   if (flagLastPress === "equally") {
     reset();

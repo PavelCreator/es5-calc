@@ -1,3 +1,4 @@
+"use strict";
 save = {
   values: function () {
     if (firstVal === undefined) {

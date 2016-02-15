@@ -1,3 +1,4 @@
+"use strict";
 notification = {
   delay: 2500,
   show: function (text) {
