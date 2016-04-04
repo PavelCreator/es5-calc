@@ -3,7 +3,7 @@
 <h3><a href="http://melomance.net/calc">Full demo</a></h3>
 <h5>This project:</h5>
 <ul>
-  <li>... is a full copy of Windows calculator logic, all sequences have been elaborated</li>
+  <li>... is a full copy of <strong>Windows calculator logic</strong>, all sequences have been elaborated</li>
   <li>... provides app <strong>control from the keyboard</strong> and work with the <strong>clipboard</strong></li>
   <li>... written in Vanilla JavaScript <strong>without using jQuery</strong></li>
   <li>... have <strong>ES5</strong> and <strong>ES2015</strong> separate sources (both is full versions)</li>
