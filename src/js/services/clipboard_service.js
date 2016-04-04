@@ -1,8 +1,8 @@
 "use strict";
-clipboardService = {
+ClipboardService = {
   pastedTextValidation: function (pastedText) {
     if (pastedText.match(/^[0-9\.,]+$/) == null) {
-      notification.warning("Data from clipboard is not a number");
+      Notification.warning("Data from clipboard is not a number");
     } else {
       if (pastedText.indexOf(",") != -1) {
         pastedText = pastedText.replace(/,/g, ".")
@@ -14,7 +14,7 @@ clipboardService = {
         }
       }
       if (dotCount > 1) {
-        notification.warning("Data from clipboard is not a number");
+        Notification.warning("Data from clipboard is not a number");
       } else {
         if (pastedText.charAt(0) == ".") {
           pastedText = "0" + pastedText;

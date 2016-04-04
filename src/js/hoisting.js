@@ -14,44 +14,31 @@ var
   /*FUNCTIONS*/
 
   /*Auxiliary Services*/
-  fieldSvc,
-  calculationStringSvc,
-  mathSvc,
-  save,
-  make,
+  Save,
+  Make,
+  FieldSvc,
+  CalculationStringSvc,
+  MathSvc,
+  ClassFnc,
+
   logger,
   logger2,
-  browser,
-  classFnc,
 
   /*App Services*/
-  reset,
-  calculationAction,
-  changeCalculationString,
-  reciprocCalculationString,
-  percentAction,
-  specialOperatorProcess,
-  clipboardService,
+  AppSvc,
+  ClipboardService,
 
   /*Entities*/
-  memory,
-  clipboard,
+  Memory,
+  Clipboard,
 
   /*View Layout*/
-  view,
-  notification,
-  notificationTimeout,
-  warningClassTimeout,
+  View,
+  Notification,
 
   /*Handler Services*/
-  numPress,
-  operatorPress,
-  equallyPress,
-  plusMinusPress,
-  percentPress,
-  reciprocPress,
-  squareRootPress,
-  backspacePress,
-  clearErrorPress
+  Press,
 
-  ;
+  /*Timeouts*/
+  notificationTimeout,
+  warningClassTimeout;

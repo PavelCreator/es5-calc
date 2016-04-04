@@ -6,178 +6,178 @@ function pressed(e) {
   switch (e.which) {
     /*Operators*/
     case 107://+
-      operatorPress("plus");
+      Press.operator("plus");
       break;
 
     case 45://-
-      operatorPress("minus");
+      Press.operator("minus");
       break;
 
     case 109://-
-      operatorPress("minus");//-
+      Press.operator("minus");//-
       break;
 
     case 189://-
-      operatorPress("minus");//-
+      Press.operator("minus");//-
       break;
 
     case 106://*
-      operatorPress("multiply");
+      Press.operator("multiply");
       break;
 
     case 111://\/
-      operatorPress("divide");
+      Press.operator("divide");
       break;
 
     /*Service buttons*/
     case 13://Enter
-      equallyPress();
+      Press.equally();
       break;
 
     case 187://=
-      equallyPress();
+      Press.equally();
       break;
 
     case 27://ESC, Del
-      reset();
+      AppSvc.reset();
       break;
 
     case 192://`
-      reset();
+      AppSvc.reset();
       break;
 
     case 8://Backspace
-      backspacePress();
+      Press.backspace();
       break;
 
     /*Memory*/
     case 77://MS
-      memory.save();
+      Memory.save();
       break;
 
     /*Clipboard*/
     case 67:
       if (ctrlDown) {
-        clipboard.copy();//Ctrl+C
+        Clipboard.copy();//Ctrl+C
       }else{
-        reset();
+        AppSvc.reset();
       }
       break;
 
     case 88:
       if (ctrlDown) {
-        clipboard.cut();//Ctrl+X
+        Clipboard.cut();//Ctrl+X
       }
       break;
 
     /*Additional Buttons*/
     case 75:
-      view.showKeyboard();
+      View.showKeyboard();
       break;
 
     case 73:
-      view.showInfo();
+      View.showInfo();
       break;
 
     /*Numbers*/
     case 48://0
-      numPress(0);
+      Press.num(0);
       break;
 
     case 96://0
-      numPress(0);
+      Press.num(0);
       break;
 
     case 49://1
-      numPress(1);
+      Press.num(1);
       break;
 
     case 97://1
-      numPress(1);
+      Press.num(1);
       break;
 
     case 50://2
-      numPress(2);
+      Press.num(2);
       break;
 
     case 98://2
-      numPress(2);
+      Press.num(2);
       break;
 
     case 51://3
-      numPress(3);
+      Press.num(3);
       break;
 
     case 99://3
-      numPress(3);
+      Press.num(3);
       break;
 
     case 52://4
-      numPress(4);
+      Press.num(4);
       break;
 
     case 100://4
-      numPress(4);
+      Press.num(4);
       break;
 
     case 53://5
-      numPress(5);
+      Press.num(5);
       break;
 
     case 101://5
-      numPress(5);
+      Press.num(5);
       break;
 
     case 54://6
-      numPress(6);
+      Press.num(6);
       break;
 
     case 102://6
-      numPress(6);
+      Press.num(6);
       break;
 
     case 55://7
-      numPress(7);
+      Press.num(7);
       break;
 
     case 103://7
-      numPress(7);
+      Press.num(7);
       break;
 
     case 56://8
-      numPress(8);
+      Press.num(8);
       break;
 
     case 104://8
-      numPress(8);
+      Press.num(8);
       break;
 
     case 57://9
-      numPress(9);
+      Press.num(9);
       break;
 
     case 105://9
-      numPress(9);
+      Press.num(9);
       break;
 
     case 44://,
-      numPress(".");
+      Press.num(".");
       break;
 
     case 188://,
-      numPress(".");
+      Press.num(".");
       break;
 
     case 46://.
-      numPress(".");
+      Press.num(".");
       break;
 
     case 190://.
-      numPress(".");
+      Press.num(".");
       break;
 
     case 110://.
-      numPress(".");
+      Press.num(".");
       break;
   }
   /*console.log(e.which);*/

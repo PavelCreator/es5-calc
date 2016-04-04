@@ -1,5 +1,5 @@
 "use strict";
-clipboard = {
+Clipboard = {
   vm: this,
   toClipboard: function () {
     var textArea = document.createElement("textarea");
@@ -11,12 +11,12 @@ clipboard = {
   },
   copy: function () {
     this.toClipboard();
-    notification.info("Copied to the clipboard");
+    Notification.info("Copied to the clipboard");
   },
   cut: function () {
     this.toClipboard();
-    reset();
-    notification.info("Cut to the clipboard");
+    AppSvc.reset();
+    Notification.info("Cut to the clipboard");
   },
   pasteCatch: function () {
     document.getElementById('field').onpaste = function (e) {
@@ -26,10 +26,10 @@ clipboard = {
       } else if (e.clipboardData && e.clipboardData.getData) {
         pastedText = e.clipboardData.getData('text/plain');
       }
-      if(clipboardService.pastedTextValidation(pastedText)){
+      if(ClipboardService.pastedTextValidation(pastedText)){
         field = pastedText;
-        fieldSvc.renew();
-        notification.info("Inserted from the clipboard");
+        FieldSvc.renew();
+        Notification.info("Inserted from the clipboard");
       };
       return false;
     };
@@ -39,7 +39,7 @@ clipboard = {
       event.preventDefault();
       var key = event.keyCode || event.charCode;
       if (key == 8 || key == 46) {
-        backspacePress();
+        Press.backspace();
         return false;
       }
       if (key == 116){

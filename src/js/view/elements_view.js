@@ -1,5 +1,5 @@
 "use strict";
-view = {
+View = {
   showInfo: function(){
     document.getElementById("calc").style.display = "none";
     document.getElementById("info").style.display = "block";

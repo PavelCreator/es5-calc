@@ -1,5 +1,5 @@
 "use strict";
-memory = {
+Memory = {
   value: 0,
   showMemorySign: function () {
     document.getElementById("memory-sign").style.display = "block";
@@ -9,49 +9,49 @@ memory = {
   },
   clear: function () {
     if (this.value == 0){
-      notification.warning("Memory cell is empty");
+      Notification.warning("Memory cell is empty");
       return false;
     }
     this.value = 0;
     this.hideMemorySign();
-    notification.info("Memory has been cleaned");
+    Notification.info("Memory has been cleaned");
   },
   show: function () {
     if (this.value == 0){
-      notification.warning("Memory cell is empty");
+      Notification.warning("Memory cell is empty");
       return false;
     }
     field = this.value;
-    fieldSvc.renew();
+    FieldSvc.renew();
     flagLastPress = 'equally';
-    notification.info("Extracted from memory");
+    Notification.info("Extracted from memory");
   },
   save: function () {
     if (parseFloat(field) == 0){
-      notification.warning("Enter the number before saving");
+      Notification.warning("Enter the number before saving");
       return false;
     }
     this.value = parseFloat(field);
     flagLastPress = 'equally';
     this.showMemorySign();
-    notification.info("Stored in memory");
+    Notification.info("Stored in memory");
   },
   plus: function () {
     if (this.value == 0){
-      notification.warning("Memory cell is empty");
+      Notification.warning("Memory cell is empty");
       return false;
     }
     this.value += parseFloat(field);
     this.showMemorySign();
-    notification.info("Summed with value in the memory");
+    Notification.info("Summed with value in the memory");
   },
   minus: function () {
     if (this.value == 0){
-      notification.warning("Memory cell is empty");
+      Notification.warning("Memory cell is empty");
       return false;
     }
     this.value -= parseFloat(field);
     this.showMemorySign();
-    notification.info("Deducted from value in the memory");
+    Notification.info("Deducted from value in the memory");
   },
 }

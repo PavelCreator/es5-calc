@@ -1,5 +1,5 @@
 "use strict";
-calculationStringSvc = {
+CalculationStringSvc = {
   reset: function(){
     document.getElementById("calculation-string").innerHTML = "";
   },

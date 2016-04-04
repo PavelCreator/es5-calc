@@ -1,5 +1,5 @@
 "use strict";
-fieldSvc = {
+FieldSvc = {
   renew: function(){
     document.getElementById("field").value = field;
   },

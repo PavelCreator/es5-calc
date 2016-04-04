@@ -40,6 +40,11 @@ var
     }
   }
 
+function swallowError (error) {
+  console.log(error.toString());
+  this.emit('end');
+}
+
 gulp.task('build-css', function () {
   gulp.src(config.src.css)
     .pipe(sass({
@@ -63,9 +68,10 @@ gulp.task('build-js', function () {
   return gulp.src(config.src.js)
     .pipe(concat('main.js'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest(config.build.js))
-    .pipe(notify({message: 'Build JS task complete'}));
+    .pipe(notify({message: 'Build JS task complete'}))
+    .on('error', swallowError);
 });
 
 gulp.task('build-html', function () {

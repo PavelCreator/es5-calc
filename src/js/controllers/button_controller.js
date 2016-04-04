@@ -4,78 +4,78 @@ var operatorArr = ['plus','minus','multiply','divide'];
 for (var i = 0; i < operatorArr.length; i++) {
   document.getElementById(operatorArr[i]).onclick = (function (x) {
     return function () {
-      operatorPress(operatorArr[x]);
+      Press.operator(operatorArr[x]);
     }
   })(i);
 }
 
 /*Special operators*/
 document.getElementById("percent").onclick = function () {
-  percentPress();
+  Press.percent();
 }
 document.getElementById("reciproc").onclick = function () {
-  reciprocPress();
+  Press.reciproc();
 }
 document.getElementById("square_root").onclick = function () {
-  squareRootPress();
+  Press.squareRoot();
 }
 
 /*Service buttons*/
 document.getElementById("equally").onclick = function () {
-  equallyPress();
+  Press.equally();
 }
 document.getElementById("reset").onclick = function () {
-  reset();
+  AppSvc.reset();
 }
 document.getElementById("clear_error").onclick = function () {
-  clearErrorPress();
+  Press.clearError();
 }
 document.getElementById("plus-minus").onclick = function () {
-  plusMinusPress();
+  Press.plusMinus();
 }
 document.getElementById("backspace").onclick = function () {
-  backspacePress();
+  Press.backspace();
 }
 
 /*Memory*/
 document.getElementById("mc").onclick = function () {
-  memory.clear();
+  Memory.clear();
 }
 document.getElementById("mr").onclick = function () {
-  memory.show();
+  Memory.show();
 }
 document.getElementById("ms").onclick = function () {
-  memory.save();
+  Memory.save();
 }
 document.getElementById("m_plus").onclick = function () {
-  memory.plus();
+  Memory.plus();
 }
 document.getElementById("m_minus").onclick = function () {
-  memory.minus();
+  Memory.minus();
 }
 
 /*Clipboard*/
 document.getElementById("copy").onclick = function () {
-  clipboard.copy();
+  Clipboard.copy();
 }
 document.getElementById("cut").onclick = function () {
-  clipboard.cut();
+  Clipboard.cut();
 }
 
 /*Additional Buttons*/
 document.getElementById("show-info").onclick = function () {
-  view.showInfo();
+  View.showInfo();
 }
 document.getElementById("show-keyboard").onclick = function () {
-  view.showKeyboard();
+  View.showKeyboard();
 }
 document.getElementsByClassName("show-calc").onclick = function () {
-  view.showCalc();
+  View.showCalc();
 }
 var showCalc = document.getElementsByClassName("show-calc");
 for (var i = 0; i < showCalc.length; i++) {
   showCalc[i].onclick = function () {
-    view.showCalc();
+    View.showCalc();
   }
 }
 
@@ -83,10 +83,10 @@ for (var i = 0; i < showCalc.length; i++) {
 for (var i = 0; i <= 9; i++) {
   document.getElementById("n" + i).onclick = (function (x) {
     return function () {
-      numPress(x);
+      Press.num(x);
     }
   })(i);
 }
 document.getElementById("point").onclick = function () {
-  numPress(".");
+  Press.num(".");
 }
