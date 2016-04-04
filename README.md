@@ -1,6 +1,6 @@
 <h1>JavaScript demo of skills (ES5, ES2015, Gulp, OOP in static classes style)</h1>
 <h3>Full-featured analogue of Windows calculator</h3>
-<h3><a href="http://pavelcreator.com/calc">Demo</a></h3>
+<h3><a href="http://melomance.net/calc">Full demo</a></h3>
 <h5>This project:</h5>
 <ul>
   <li>... is a full copy of Windows calculator logic, all sequences have been elaborated</li>
