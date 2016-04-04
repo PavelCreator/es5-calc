@@ -1,46 +1,56 @@
-var
-  gulp = require('gulp'),
+'use strict';
+const gulp = require('gulp');
+const rename = require('gulp-rename');
+const autoprefixer = require('gulp-autoprefixer');
+const notify = require('gulp-notify');
+const del = require('del');
 
-  rename = require('gulp-rename'),
-  autoprefixer = require('gulp-autoprefixer'),
-  notify = require('gulp-notify'),
-  del = require('del'),
+const sass = require('gulp-sass');
+const cssnano = require('gulp-cssnano');
 
-  sass = require('gulp-sass'),
-  cssnano = require('gulp-cssnano'),
+const imagemin = require('gulp-imagemin');
+const cache = require('gulp-cache');
 
-  imagemin = require('gulp-imagemin'),
-  cache = require('gulp-cache'),
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const stripDebug = require('gulp-strip-debug');
+const sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
 
-  jshint = require('gulp-jshint'),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
+const htmlmin = require('gulp-htmlmin');
+const removeHtmlComments = require('gulp-remove-html-comments');
 
-  htmlmin = require('gulp-htmlmin'),
-  removeHtmlComments = require('gulp-remove-html-comments'),
-
-  config = {
-    src: {
-      css: 'src/scss/*.scss',
-      img: 'src/img/*',
-      js: [
-        'src/js/hoisting.js',
-        'src/js/view/*.js',
-        'src/js/services/*.js',
-        'src/js/controllers/*.js',
-        'src/js/start.js'
-      ],
-      html: 'index-src.html'
-    },
-    build: {
-      css: 'build/css',
-      img: 'build/img',
-      js: 'build/js',
-      html: './'
-    }
+const config = {
+  src: {
+    css: 'src/scss/*.scss',
+    img: 'src/img/*',
+    jsES5: [
+      'src/es5/hoisting.js',
+      'src/es5/view/*.js',
+      'src/es5/services/*.js',
+      'src/es5/controllers/*.js',
+      'src/es5/start.js'
+    ],
+    jsES2015: [
+      'src/es2015/hoisting.js',
+      'src/es2015/view/*.js',
+      'src/es2015/services/*.js',
+      'src/es2015/controllers/*.js',
+      'src/es2015/start.js'
+    ],
+    htmlES5: 'index-src-es5.html',
+    htmlES2015: 'index-src-es2015.html'
+  },
+  build: {
+    css: 'build/css',
+    img: 'build/img',
+    jsES5: 'build/es5',
+    jsES2015: 'build/es2015',
+    html: './'
   }
+}
 
-function swallowError (error) {
+function swallowError(error) {
   console.log(error.toString());
   this.emit('end');
 }
@@ -59,48 +69,80 @@ gulp.task('build-css', function () {
 
 gulp.task('build-img', function () {
   gulp.src(config.src.img)
-    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+    .pipe(cache(imagemin({optimizationLevel: 5, progressive: true, interlaced: true})))
     .pipe(gulp.dest(config.build.img))
     .pipe(notify({message: 'Build Images task complete'}));
 });
 
-gulp.task('build-js', function () {
-  return gulp.src(config.src.js)
-    .pipe(concat('main.js'))
-    .pipe(rename({suffix: '.min'}))
-    //.pipe(uglify())
-    .pipe(gulp.dest(config.build.js))
-    .pipe(notify({message: 'Build JS task complete'}))
+gulp.task('build-js-es5', function () {
+  return gulp.src(config.src.jsES5)
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
+    .pipe(stripDebug())
+    .pipe(gulp.dest(config.build.jsES5))
+    .pipe(notify({message: 'Build ES5 task complete'}))
     .on('error', swallowError);
 });
 
-gulp.task('build-html', function () {
-  return gulp.src(config.src.html)
+gulp.task('build-js-es2015', () =>
+    gulp.src(config.src.jsES2015)
+      .pipe(sourcemaps.init())
+      .pipe(babel({
+        presets: ['es2015']
+      }).on('error', swallowError))
+      .pipe(concat('main.min.js'))
+      .pipe(uglify())
+      .pipe(stripDebug())
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(config.build.jsES2015))
+      .pipe(notify({message: 'Build ES2015 task complete'}))
+);
+
+gulp.task('build-html-es5', () => {
+  return gulp.src(config.src.htmlES5)
     .pipe(removeHtmlComments())
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(rename('index.html'))
     .pipe(gulp.dest(config.build.html))
-    .pipe(notify({message: 'Build HTML task complete'}));
+    .pipe(notify({message: 'Build HTML-ES5 task complete'}));
 });
 
-gulp.task('clean', function() {
-    return del(['build/css', 'build/js', 'build/img', 'index.html']);
+gulp.task('build-html-es2015', () => {
+  return gulp.src(config.src.htmlES2015)
+    .pipe(removeHtmlComments())
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(rename('index.html'))
+    .pipe(gulp.dest(config.build.html))
+    .pipe(notify({message: 'Build HTML-ES2015 task complete'}));
+});
+
+gulp.task('clean', function () {
+  return del(['build/css', 'build/js', 'build/img', 'index.html']);
 });
 
 gulp.task('watch-css', function () {
   gulp.watch(config.src.css, ['build-css'])
 })
-gulp.task('watch-js', function () {
-  gulp.watch(config.src.js, ['build-js'])
+gulp.task('watch-js-es5', () => {
+  gulp.watch(config.src.jsES5, ['build-js-es5'])
+})
+gulp.task('watch-js-es2015', () => {
+  gulp.watch(config.src.jsES2015, ['build-js-es2015'])
 })
 gulp.task('watch-img', function () {
   gulp.watch(config.src.img, ['build-img'])
 })
-gulp.task('watch-html', function () {
-  gulp.watch(config.src.html, ['build-html'])
+gulp.task('watch-html-es5', () => {
+  gulp.watch(config.src.htmlES5, ['build-html-es5'])
+})
+gulp.task('watch-html-es2015', () => {
+  gulp.watch(config.src.htmlES2015, ['build-html-es2015'])
 })
 
-gulp.task('watch', ['watch-css', 'watch-js', 'watch-img', 'watch-html'])
-gulp.task('build', ['build-css', 'build-js', 'build-img', 'build-html'])
-gulp.task('default', ['build-html'])
-/*npm install --save-dev packName*/
+gulp.task('w5', ['watch-css', 'watch-js-es5', 'watch-img', 'watch-html-es5'])
+gulp.task('b5', ['build-css', 'build-js-es5', 'build-img', 'build-html-es5'])
+
+gulp.task('w2015', ['watch-css', 'watch-js-es2015', 'watch-img', 'watch-html-es2015'])
+gulp.task('b2015', ['build-css', 'build-js-es2015', 'build-img', 'build-html-es2015'])
+
+gulp.task('default', ['w2015'])
