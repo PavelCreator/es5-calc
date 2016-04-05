@@ -7,186 +7,202 @@
   <link rel="stylesheet" href="build/css/style.min.css" type="text/css" media="screen"/>
   <link href='https://fonts.googleapis.com/css?family=Coda|Roboto+Mono:500,400,300,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="favicon.ico" />
-<!--  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <!--  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
 </head>
 <body>
-
-<div class="parent">
-  <div class="calc-wrapper">
-    <div class="header">
-      <h2 class="title">ES2015 Calc</h2>
-      <p class="author">by PavelCreator:
-        <a href="https://github.com/PavelCreator" target='_blank'><i class="fa fa-github"></i></a>,
-        <a href="https://ua.linkedin.com/in/pavel-neshataev-470167a0" target='_blank'><i class="fa fa-linkedin-square"></i></a>
-      </p>
-    </div>
-    <div id="keyboard">
-      <h3 class="to-calc"><a href="#" class="show-calc" rel='nofollow'>Go back to the calculator</a></h3>
-      <h3 class="to-calc">Driving keyboard control:</h3>
-      <img src="build/img/keyboard.png" class="keyboard-image" alt="">
-
-      <div class="row keyboard-description tac">
-        <h3 class="col-xs-12 to-calc">Legend:</h3>
-        <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">ESC, ~, `, Delete, C</span> - <span class="keyboard-description-2">C</span></div>
-        <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">Enter</span> - <span class="keyboard-description-2">=</span></div>
-        <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">I</span> - <span class="keyboard-description-2"><i class="fa fa-info-circle"></i></span></div>
-        <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">K</span> - <span class="keyboard-description-2"><i class="fa fa-keyboard-o"></i></span></div>
-        <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">Ctrl+C</span> - <span class="keyboard-description-2"><i class="fa fa-files-o"></i></span></div>
-        <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">Ctrl+X</span> - <span class="keyboard-description-2"><i class="fa fa-scissors"></i></span></div>
-        <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">M</span> - <span class="keyboard-description-2">MS</span></div>
-        <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">Blackspace</span> - <span class="keyboard-description-2"><i class="fa fa-arrow-left"></i></span></div>
+<div class="big-wrapper">
+  <div class="parent">
+    <div class="calc-wrapper">
+      <div class="header">
+        <h2 class="title">ES2015 Calc</h2>
+        <p class="author">by PavelCreator:
+          <a href="https://github.com/PavelCreator" target='_blank'><i class="fa fa-github"></i></a>,
+          <a href="https://ua.linkedin.com/in/pavel-neshataev-470167a0" target='_blank'><i class="fa fa-linkedin-square"></i></a>
+        </p>
       </div>
-    </div>
-    <div id="info">
-      <h3 class="to-calc"><a href="#" class="show-calc" rel='nofollow'>Go back to the calculator</a></h3>
-      <div class="row keyboard-description info-description">
-        <h3 class="col-xs-12 to-calc">About project:</h3>
-        <div class="col-xs-12 tac">
-          <p>The project is written in pure JavaScript without using jQuery.</p>
-          <p>It is a full-featured analogue of Windows calculator.</p>
-          <p>This project is demonstration JS-OOP in static classes style, it have ES5 and ES2015 separate sources (both is full versions)</p>
-          <p>It is designed with an object-oriented approach, the model is moved to services (9), controllers (5) are not overloaded, view-entities taken out separately (2).</p>
-          <p>The individual modules were created to work with the Clipboard, Keyboard, Notification and Memory.</p>
-          <p>It also provides app control from the keyboard and work with the clipboard.</p>
-          <p>Project code you can appreciate on <a href="https://github.com/PavelCreator/es5-calc" target='_blank'>GitHub</a></p>
+      <div id="keyboard">
+        <h3 class="to-calc"><a href="#" class="show-calc" rel='nofollow'>Go back to the calculator</a></h3>
+        <h3 class="to-calc">Driving keyboard control:</h3>
+        <img src="build/img/keyboard.png" class="keyboard-image" alt="">
+
+        <div class="row keyboard-description tac">
+          <h3 class="col-xs-12 to-calc">Legend:</h3>
+          <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">ESC, ~, `, Delete, C</span> -
+            <span class="keyboard-description-2">C</span></div>
+          <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">Enter</span> -
+            <span class="keyboard-description-2">=</span></div>
+          <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">I</span> -
+            <span class="keyboard-description-2"><i class="fa fa-info-circle"></i></span></div>
+          <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">K</span> -
+            <span class="keyboard-description-2"><i class="fa fa-keyboard-o"></i></span></div>
+          <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">Ctrl+C</span> -
+            <span class="keyboard-description-2"><i class="fa fa-files-o"></i></span></div>
+          <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">Ctrl+X</span> -
+            <span class="keyboard-description-2"><i class="fa fa-scissors"></i></span></div>
+          <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">M</span> -
+            <span class="keyboard-description-2">MS</span></div>
+          <div class="col-xs-12 col-sm-6"><span class="keyboard-description-1">Blackspace</span> -
+            <span class="keyboard-description-2"><i class="fa fa-arrow-left"></i></span></div>
         </div>
       </div>
+      <div id="info">
+        <h3 class="to-calc"><a href="#" class="show-calc" rel='nofollow'>Go back to the calculator</a></h3>
+        <div class="row keyboard-description info-description">
+          <h3 class="col-xs-12 to-calc">About project:</h3>
+          <div class="col-xs-12 tac">
+            <p>The project is written in pure JavaScript without using jQuery.</p>
+            <p>It is a full-featured analogue of Windows calculator.</p>
+            <p>This project is demonstration JS-OOP in static classes style, it have ES5 and ES2015 separate sources
+              (both is full versions)</p>
+            <p>It is designed with an object-oriented approach, the model is moved to services (9), controllers (5) are
+              not overloaded, view-entities taken out separately (2).</p>
+            <p>The individual modules were created to work with the Clipboard, Keyboard, Notification and Memory.</p>
+            <p>It also provides app control from the keyboard and work with the clipboard.</p>
+            <p>Project code you can appreciate on <a href="https://github.com/PavelCreator/es5-calc" target='_blank'>GitHub</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <table id="calc">
+        <tr>
+          <td colspan="5">
+            <div class="calculation-string" id="calculation-string"></div>
+            <div class="calculation-string notifications" id="notifications"></div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="5">
+            <div class="field-wrapper">
+              <input type="text" name="field"
+                     id="field"
+                     class="form-control field"
+              />
+              <div class="memory-sign" id="memory-sign">M</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="btn btn-default simple-button btn-color3" id="copy"><i class="fa fa-files-o"></i></div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color3" id="cut"><i class="fa fa-scissors"></i></div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color3" id="show-keyboard"><i class="fa fa-keyboard-o"></i>
+            </div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color3" id="show-info"><i class="fa fa-info-circle"></i></div>
+          </td>
+          <td>
+            <a href="https://github.com/PavelCreator/es5-calc" target='_blank'>
+              <div class="btn btn-default simple-button btn-color3"><i class="fa fa-github"></i></div>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="btn btn-default simple-button btn-color3" id="mc">MC</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color3" id="mr">MR</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color3" id="ms">MS</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color3" id="m_plus">M+</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color3" id="m_minus">M-</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="backspace">
+              <img src="build/img/arrow_left.png" class="arrow-left" alt="">
+            </div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="clear_error">CE</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="reset">C</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="plus-minus">+/-</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="square_root">&#8730;</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="n7">7</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="n8">8</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="n9">9</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="divide">/</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="percent">%</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="n4">4</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="n5">5</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="n6">6</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="multiply">*</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="reciproc">1/x</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="n1">1</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="n2">2</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="n3">3</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="minus">-</div>
+          </td>
+          <td rowspan="2">
+            <div class="btn btn-default simple-button rowspan2 btn-color2" id="equally">
+              <span class="valign-middle">=</span></div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="btn btn-default simple-button colspan2 btn-color1" id="n0">0</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color1" id="point">.</div>
+          </td>
+          <td>
+            <div class="btn btn-default simple-button btn-color2" id="plus">+</div>
+          </td>
+        </tr>
+      </table>
     </div>
-    <table id="calc">
-      <tr>
-        <td colspan="5">
-          <div class="calculation-string" id="calculation-string"></div>
-          <div class="calculation-string notifications" id="notifications"></div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="5">
-          <div class="field-wrapper">
-            <input type="text" name="field"
-                   id="field"
-                   class="form-control field"
-                />
-            <div class="memory-sign" id="memory-sign">M</div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="btn btn-default simple-button btn-color3" id="copy"><i class="fa fa-files-o"></i></div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color3" id="cut"><i class="fa fa-scissors"></i></div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color3" id="show-keyboard"><i class="fa fa-keyboard-o"></i></div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color3" id="show-info"><i class="fa fa-info-circle"></i></div>
-        </td>
-        <td>
-          <a href="https://github.com/PavelCreator/es5-calc" target='_blank'><div class="btn btn-default simple-button btn-color3"><i class="fa fa-github"></i></div></a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="btn btn-default simple-button btn-color3" id="mc">MC</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color3" id="mr">MR</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color3" id="ms">MS</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color3" id="m_plus">M+</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color3" id="m_minus">M-</div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="backspace">
-            <img src="build/img/arrow_left.png" class="arrow-left" alt="">
-          </div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="clear_error">CE</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="reset">C</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="plus-minus">+/-</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="square_root">&#8730;</div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="n7">7</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="n8">8</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="n9">9</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="divide">/</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="percent">%</div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="n4">4</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="n5">5</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="n6">6</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="multiply">*</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="reciproc">1/x</div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="n1">1</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="n2">2</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="n3">3</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="minus">-</div>
-        </td>
-        <td rowspan="2">
-          <div class="btn btn-default simple-button rowspan2 btn-color2" id="equally"><span class="valign-middle">=</span></div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <div class="btn btn-default simple-button colspan2 btn-color1" id="n0">0</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color1" id="point">.</div>
-        </td>
-        <td>
-          <div class="btn btn-default simple-button btn-color2" id="plus">+</div>
-        </td>
-      </tr>
-    </table>
   </div>
 </div>
 
